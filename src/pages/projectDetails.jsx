@@ -54,7 +54,7 @@ const ProjectDetails = () => {
                 <MyCarousel title={project?.name} image={project?.img} />
                 <div>
                     <p className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 mt-6 italic border-l-4 border-cyan-400 pl-4">
-                        {project?.text}
+                        {project?.textAbout}
                     </p>
                 </div>
         </main>

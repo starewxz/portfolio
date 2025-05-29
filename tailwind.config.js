@@ -24,7 +24,8 @@ export default {
             animation: {
                 'slide-in-top': 'slide-in-top 0.8s ease-out forwards',
                 'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
-                'fade-in': 'fade-in 2s ease-out forwards',
+                'fade-in': 'fade-in 1s ease-out forwards',
+                'fade-in-2': 'fade-in 2s ease-out forwards',
                 'slide-in-top-delay': 'slide-in-top 0.8s ease-out forwards 0.3s',
                 'slide-in-left-delay': 'slide-in-left 0.8s ease-out forwards 0.3s',
                 'slide-in-right': 'slide-in-right 0.8s cubic-bezier(0.68,-0.55,0.265,1.55) forwards',

@@ -28,7 +28,7 @@ const NotFoundPage = () => {
             </div>
 
             <div className="flex items-center justify-center flex-1">
-                <div className="w-[300px] md:w-[500px] h-[400px] md:h-[600px] overflow-hidden rounded-3xl ring-2 ring-cyan-400/30 shadow-xl animate-fade-in">
+                <div className="w-[300px] md:w-[500px] h-[400px] md:h-[600px] overflow-hidden rounded-3xl ring-2 ring-cyan-400/30 shadow-xl animate-fade-in-2">
                     <img
                         className="w-full h-full object-cover"
                         src={`${import.meta.env.BASE_URL}img/onyak.jpeg`}
