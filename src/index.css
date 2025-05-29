@@ -7,6 +7,7 @@ body {
     height: 100%;
     margin: 0;
     transition: background-color 0.4s ease;
+    font-family: 'Inter', sans-serif;
 }
 body.light-theme h1,
 body.light-theme h2,
