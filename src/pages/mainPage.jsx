@@ -11,7 +11,7 @@ const MainPage = () => {
             };
         }, []);
     return (
-        <>
+        <div className="page">
             <Header />
             <main className="relative flex items-center justify-start pl-8 pr-0 lg:pr-20 mt-20">
                 <div className="z-10 ml-44 animate-slide-in-left">
@@ -27,7 +27,7 @@ const MainPage = () => {
                     />
                 </div>
             </main>
-        </>
+        </div>
     )
 }
 

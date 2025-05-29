@@ -20,7 +20,7 @@ const SkillsPage = () => {
     };
 
     return (
-        <div className={"pb-5"}>
+        <div className={"pb-5 page"}>
             <Header />
             <div className="animate-fade-in">
                 <Card>

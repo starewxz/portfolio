@@ -97,3 +97,13 @@ h2 button {
 .fancy-link.active::after {
     width: 100%;
 }
+
+.page {
+    background-color: #bae6fd;
+    min-height: 100vh;
+}
+
+.dark .page {
+    background-color: #164e63;
+}
+

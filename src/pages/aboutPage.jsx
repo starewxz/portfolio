@@ -4,12 +4,18 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
 import Card from "../components /card.jsx";
+import {useEffect} from "react";
 
 const AboutPage = () => {
     const navigate = useNavigate();
-    document.body.style.overflowX = 'hidden';
+    useEffect(() => {
+        document.body.style.overflowX = "hidden";
+        return () => {
+            document.body.style.overflowX = "";
+        };
+    }, []);
     return (
-        <div className={"pb-5"}>
+        <div className={"pb-5 page"}>
         <Header />
             <div className="animate-fade-in flex flex-col justify-center items-center mt-12 px-4 sm:px-6 lg:px-8 text-white">
                 <header className="text-3xl sm:text-4xl text-center text-cyan-500 opacity-95 font-semibold leading-tight max-w-4xl mx-auto">

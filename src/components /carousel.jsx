@@ -36,10 +36,18 @@ const MyCarousel = ({title, image}) => {
     };
     return (
         <div className="relative w-full mx-auto">
-            <Carousel ref={carouselRef} autoplay dots>
+            <Carousel effect="fade" ref={carouselRef} autoplay dots>
                 {image.map((img, index) => (
                     <div key={index}>
-                        <div style={contentStyle}>
+                        <div style={contentStyle} className="relative h-[90vh] w-full flex items-center justify-center p-8">
+                            <div
+                                className="absolute inset-0 blur-xl opacity-30 rounded-xl"
+                                style={{
+                                    backgroundImage: `url(${img})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                }}
+                            ></div>
                             <img
                                 src={img}
                                 alt={`${title}-${index}`}
