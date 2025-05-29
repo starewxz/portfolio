@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #343541;
+    height: 100%;
+    margin: 0;
+    transition: background-color 0.4s ease;
+}
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme p,
+body.light-theme a,
+body.light-theme textarea,
+body.light-theme .cyan-text {
+    color: #5C5C73;
+}
+
+.box-shadow-cyan {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+}
+
+header {
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+}
+
+.cyan-text:hover {
+    text-shadow: 0 0 6px rgb(0, 255, 255);
+}
+
+h2 {
+    text-shadow: 0 8px 15px rgba(0, 30, 255, 0.6);
+    background: none;
+    transition: all 0.3s ease;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00BFFF;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+    transition: width 0.3s ease;
+}
+
+h2:hover,
+h2.active {
+    transform: scale(1.05);
+    text-shadow: 0 6px 12px rgba(0, 191, 255, 0.8);
+}
+
+h2:hover::after,
+h2.active::after {
+    width: 100%;
+}
+
+h2 button {
+    all: unset;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+.fancy-link {
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 8px 15px rgba(0, 30, 255, 0.6);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: none;
+    color: #DBE4FF;
+}
+
+.fancy-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00BFFF;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+    transition: width 0.3s ease;
+}
+
+.fancy-link:hover,
+.fancy-link.active {
+    transform: scale(1.05);
+    text-shadow: 0 6px 12px rgba(0, 191, 255, 0.8);
+}
+
+.fancy-link:hover::after,
+.fancy-link.active::after {
+    width: 100%;
+}
