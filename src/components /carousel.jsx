@@ -17,7 +17,6 @@ const contentStyle = {
     lineHeight: '1.5',
     background: 'linear-gradient(to bottom right, rgba(0,30,255,0.4), rgba(0,30,255,0.3), rgba(0,30,255,0.2))',
     backdropFilter: 'blur(12px)',
-    borderRadius: '0.75rem',
     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
     border: '1px solid rgba(0, 30, 255, 0.5)',
     transition: 'transform 0.2s ease, box-shadow 0.2s ease',

@@ -26,7 +26,7 @@ const ProjectDetails = () => {
     };
 
     return (
-        <div className="p-4">
+        <div className="pb-8">
         <header className="w-full flex items-center justify-between text-4xl font-bold text-[#DBE4FF] gap-2 p-7">
             <FontAwesomeIcon
                 icon={faChevronLeft}
@@ -53,7 +53,7 @@ const ProjectDetails = () => {
         <main>
                 <MyCarousel title={project?.name} image={project?.img} />
                 <div>
-                    <p className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 mt-6 italic border-l-4 border-cyan-400 pl-4">
+                    <p className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 mt-20 italic border-l-4 border-cyan-400 pl-4">
                         {project?.textAbout}
                     </p>
                 </div>
