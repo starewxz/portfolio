@@ -15,7 +15,7 @@ const AboutPage = () => {
         };
     }, []);
     return (
-        <div className={"pb-5 page"}>
+        <div className={"pb-5"}>
         <Header />
             <div className="animate-fade-in flex flex-col justify-center items-center mt-12 px-4 sm:px-6 lg:px-8 text-white">
                 <header className="text-3xl sm:text-4xl text-center text-cyan-500 opacity-95 font-semibold leading-tight max-w-4xl mx-auto">

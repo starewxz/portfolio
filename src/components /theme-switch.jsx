@@ -15,7 +15,7 @@ const Switch = () => {
     }, []);
 
     useEffect(() => {
-        document.body.style.backgroundColor = isDark ? '#343541' : '#DBE4FF';
+        document.body.style.backgroundColor = isDark ? '#164e63' : '#bae6fd';
 
         if (isDark) {
             document.body.classList.remove('light-theme');

@@ -4,7 +4,7 @@ import dataProjects from "../../data-projects.js";
 
 const ProjectsPage = () => {
     return (
-        <div className={"pb-5 page"}>
+        <div className={"pb-5"}>
         <Header />
             {dataProjects.map((project, i) => (
                 <ProjectLayout

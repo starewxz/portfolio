@@ -98,12 +98,4 @@ h2 button {
     width: 100%;
 }
 
-.page {
-    background-color: #bae6fd;
-    min-height: 100vh;
-}
-
-.dark .page {
-    background-color: #164e63;
-}
 

@@ -35,7 +35,7 @@ const ProjectDetails = () => {
     const isLoading = !project;
 
     return (
-        <div className="pb-8 page">
+        <div className="pb-8">
             {isLoading ? (
                 <div className="px-8 py-20">
                     <Skeleton active paragraph={{ rows: 6 }} />
