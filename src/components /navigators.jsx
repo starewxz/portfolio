@@ -27,7 +27,7 @@ const Navigators = () => {
     const navItems = ['Home', 'About me', 'Projects', 'Skills'];
 
     return (
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-4 sm:gap-10 text-white text-base sm:text-2xl font-bold">
+        <div className="flex-wrap justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-4 sm:gap-10 text-white text-base sm:text-2xl font-bold">
             {navItems.map((item, i) => (
                 <h2
                     key={item}
