@@ -26,7 +26,7 @@ const MainPage = () => {
         <div>
             <Header />
             <main className="relative flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-10 lg:px-20 mt-10 gap-10 overflow-hidden">
-                <div className="z-10 w-full flex justify-center lg:justify-start animate-slide-in-left">
+                <div className="z-10 w-full flex justify-center lg:justify-start animate-slide-in-left sm:w-1/2">
                     <Card />
                 </div>
 
