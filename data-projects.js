@@ -54,6 +54,27 @@ const dataProjects = [
             "\n" +
             "Even though it’s not a large project, it taught me the importance of clean UI, user-friendly design, and data handling in JavaScript. This was a great first step into real-world development and gave me the confidence to keep learning and building more advanced applications.",
     },
+    {
+        id: "note-keeper",
+        name: "Note Keeper",
+        img: [
+            `${import.meta.env.BASE_URL}projects/keeper1.jpeg`,
+            `${import.meta.env.BASE_URL}projects/keeper2.jpeg`,
+            `${import.meta.env.BASE_URL}projects/keeper3.jpeg`,
+            `${import.meta.env.BASE_URL}projects/keeper4.jpeg`,
+            `${import.meta.env.BASE_URL}projects/keeper5.png`,
+            `${import.meta.env.BASE_URL}projects/keeper6.png`,
+        ],
+        text: "This is a React-based note-taking app I built to practice state management, component design, and local storage persistence. It features inline editing with a clean UI, allowing users to create, edit, and delete notes seamlessly.",
+        link: "https://keeper-delta-taupe.vercel.app",
+        textAbout: "This project represents my hands-on journey into building a dynamic and interactive React application focused on user productivity. The app allows users to create notes with titles and content, edit them inline using intuitive icons, and delete them when no longer needed — all with smooth, state-driven UI updates.\n" +
+            "\n" +
+            "A key part of the challenge was implementing inline editing with controlled components and managing complex state updates, including persisting all notes in localStorage to maintain data between sessions. I also integrated FontAwesome icons to improve UX and added thoughtful UI feedback like toggling edit/save icons.\n" +
+            "\n" +
+            "This project deepened my understanding of React hooks (useState, useEffect), component composition, and event handling, while reinforcing best practices in managing immutable state updates and local storage synchronization. The resulting app combines functionality with a clean and simple design, providing a solid foundation for more advanced React projects.\n" +
+            "\n" +
+            "Building this note app was a meaningful step in my learning path — it taught me how to design and implement real-time editing workflows in React, how to create reusable components, and how to deliver a smooth, user-friendly experience. It’s a practical tool I can continue expanding and refining as I grow my React skills.",
+    }
 ]
 
 export default dataProjects

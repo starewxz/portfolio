@@ -41,7 +41,7 @@ const MyCarousel = ({title, image}) => {
                     <div key={index}>
                         <div style={contentStyle} className="relative h-[90vh] w-full flex items-center justify-center p-8">
                             <div
-                                className="absolute inset-0 blur-xl opacity-30 rounded-xl"
+                                className="absolute inset-0 blur-xl opacity-20 rounded-xl"
                                 style={{
                                     backgroundImage: `url(${img})`,
                                     backgroundSize: "cover",
