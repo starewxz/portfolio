@@ -58,12 +58,7 @@ const dataProjects = [
         id: "note-keeper",
         name: "Note Keeper",
         img: [
-            `${import.meta.env.BASE_URL}projects/keeper1.jpeg`,
-            `${import.meta.env.BASE_URL}projects/keeper2.jpeg`,
-            `${import.meta.env.BASE_URL}projects/keeper3.jpeg`,
-            `${import.meta.env.BASE_URL}projects/keeper4.jpeg`,
-            `${import.meta.env.BASE_URL}projects/keeper5.png`,
-            `${import.meta.env.BASE_URL}projects/keeper6.png`,
+
         ],
         text: "This is a React-based note-taking app I built to practice state management, component design, and local storage persistence. It features inline editing with a clean UI, allowing users to create, edit, and delete notes seamlessly.",
         link: "https://keeper-delta-taupe.vercel.app",
