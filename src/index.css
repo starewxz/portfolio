@@ -14,7 +14,9 @@ body.light-theme h2,
 body.light-theme p,
 body.light-theme a,
 body.light-theme textarea,
-body.light-theme .cyan-text {
+body.light-theme .cyan-text,
+body.light-theme header,
+body.light-theme button {
     color: #5C5C73;
 }
 
@@ -23,7 +25,48 @@ body.light-theme .cyan-text {
 }
 
 header {
+    background-color: #0f172a; /* dark navy default */
+    transition: background-color 0.4s ease;
     text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+}
+
+body.light-theme header {
+    background-color: #bae6fd;
+    text-shadow: none;
+}
+.sidebar {
+    background-color: #1e293b;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-theme .sidebar {
+    background-color: #e0f2fe;
+    color: #334155;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
+.hamburger-bar {
+    background-color: white;
+    transition: background-color 0.4s ease;
+}
+button:focus .hamburger-bar,
+button:hover .hamburger-bar {
+    background-color: #00bfff;
+}
+body.light-theme button:focus .hamburger-bar,
+body.light-theme button:hover .hamburger-bar {
+    background-color: #0284c7;
+}
+
+body.light-theme .hamburger-bar {
+    background-color: #334155;
+}
+
+body.light-theme header {
+    background-color: #ADFFFF;
 }
 
 .cyan-text:hover {
@@ -98,5 +141,34 @@ h2 button {
 .fancy-link.active::after {
     width: 100%;
 }
+
+.sidebar {
+    background-color: #1e293b;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition:
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.35s ease;
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+.sidebar.translate-x-full {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.sidebar.translate-x-0 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+body.light-theme .sidebar {
+    background-color: #e0f2fe;
+    color: #334155;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
 
 

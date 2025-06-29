@@ -62,7 +62,7 @@ const SkillsPage = () => {
                             </p>
                         </div>
                     )}
-                    <Stars rating={4} />
+                    <Stars rating={3} />
                 </Card>
                 <Card>
                     <div className="" onClick={() => toggleExpand('backEnd')}>
@@ -108,7 +108,7 @@ const SkillsPage = () => {
                             </p>
                         </div>
                     )}
-                    <Stars rating={3.5} />
+                    <Stars rating={2} />
                 </Card>
                 <Card>
                     <div onClick={() => toggleExpand('blockchain')}>
@@ -140,7 +140,7 @@ const SkillsPage = () => {
                             </p>
                         </div>
                     )}
-                    <Stars rating={2.5} />
+                    <Stars rating={1.5} />
                 </Card>
                 <Card>
                     <div onClick={() => toggleExpand('devOps')}>
@@ -170,7 +170,7 @@ const SkillsPage = () => {
                             </p>
                         </div>
                     )}
-                    <Stars rating={3} />
+                    <Stars rating={2} />
                 </Card>
 
 

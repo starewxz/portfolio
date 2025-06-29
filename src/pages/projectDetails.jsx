@@ -42,33 +42,37 @@ const ProjectDetails = () => {
                 </div>
             ) : (
                 <>
-                    <header className="w-full flex items-center justify-between text-4xl font-bold text-[#DBE4FF] gap-2 p-7">
+                    <header className="w-full flex items-center justify-between p-4 sm:p-7 text-[#DBE4FF]">
                         <FontAwesomeIcon
                             icon={faChevronLeft}
-                            className="size-6 mb-2 cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-cyan-400 hover:-translate-x-1 cyan-text"
+                            className="size-6 cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-cyan-400 hover:-translate-x-1 cyan-text"
                             onClick={() => navigate(-1)}
                         />
+
+                        <h1 className="flex-1 text-center sm:text-left text-2xl sm:text-4xl font-bold truncate mx-4">
+                            {project?.name}
+                        </h1>
+
                         <div className="flex items-center gap-4">
-                            <h1>{project?.name}</h1>
                             <FontAwesomeIcon
                                 icon={faUpRightFromSquare}
-                                className={`size-6 transition-transform duration-200 hover:scale-110 hover:rotate-6 ${
+                                className={`size-6 cursor-pointer transition-transform duration-200 hover:scale-110 hover:rotate-6 ${
                                     project?.link
-                                        ? "cursor-pointer hover:text-cyan-400 cyan-text"
+                                        ? "hover:text-cyan-400 cyan-text"
                                         : "cursor-no-drop text-gray-400"
                                 }`}
                                 onClick={handleClick}
                             />
-                        </div>
-                        <div className="animate-slide-in-top">
-                            <Switch />
+                            <div className="animate-slide-in-top">
+                                <Switch />
+                            </div>
                         </div>
                     </header>
 
                     <main className="mt-10 animate-fade-in">
                         <MyCarousel title={project?.name} image={project?.img} />
-                        <div className="mt-20 max-w-6xl mx-auto px-4">
-                            <p className="text-lg leading-relaxed text-gray-300 italic border-l-4 border-cyan-400 pl-6">
+                        <div className="mt-12 max-w-6xl mx-auto px-4 sm:px-8">
+                            <p className="text-base sm:text-lg leading-relaxed text-gray-300 italic border-l-4 border-cyan-400 pl-4 sm:pl-6">
                                 {project?.textAbout}
                             </p>
                         </div>

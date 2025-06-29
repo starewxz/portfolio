@@ -18,7 +18,7 @@ const AboutPage = () => {
         <div className={"pb-5"}>
         <Header />
             <div className="animate-fade-in flex flex-col justify-center items-center mt-12 px-4 sm:px-6 lg:px-8 text-white">
-                <header className="text-3xl sm:text-4xl text-center text-cyan-500 opacity-95 font-semibold leading-tight max-w-4xl mx-auto">
+                <div className="text-3xl sm:text-4xl text-center text-cyan-500 opacity-95 font-semibold leading-tight max-w-4xl mx-auto">
                     <h1>
                         Hello, I’m Stas — as you’ve probably already noticed on the main
                         page 😄
@@ -26,7 +26,7 @@ const AboutPage = () => {
                     <p className="mt-4 text-xl sm:text-2xl font-light">
                        💠 Here is a little bit about me 💠
                     </p>
-                </header>
+                </div>
 
                 <Card>
                     <p className="leading-relaxed max-w-prose mx-auto">
