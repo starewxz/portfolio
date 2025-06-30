@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Switch from "../components /theme-switch.jsx";
 import MyCarousel from "../components /carousel.jsx";
+import "../skeletons.css";
 
 const ProjectDetails = () => {
     const navigate = useNavigate();
@@ -35,14 +36,33 @@ const ProjectDetails = () => {
     const isLoading = !project;
 
     return (
-        <div className="pb-8">
+        <div className="pb-8 px-4 sm:px-8 lg:px-16">
             {isLoading ? (
                 <div className="px-8 py-20">
                     <Skeleton active paragraph={{ rows: 6 }} />
                 </div>
             ) : (
-                <>
-                    <header className="w-full flex items-center justify-between p-4 sm:p-7 text-[#DBE4FF]">
+                <div
+                    className="
+                        max-w-6xl
+                        mx-auto
+                        p-8
+                        rounded-2xl
+                        bg-white/10
+                        dark:bg-gray-900/30
+                        backdrop-blur-lg
+                        border
+                        border-white/20
+                        dark:border-gray-700/40
+                        shadow-lg
+                        transition-colors
+                        duration-500
+                    "
+                >
+                    <div
+                        className="glass-header w-full flex items-center justify-between p-4 sm:p-7 text-[#DBE4FF]"
+                        style={{ background: "transparent" }}
+                    >
                         <FontAwesomeIcon
                             icon={faChevronLeft}
                             className="size-6 cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-cyan-400 hover:-translate-x-1 cyan-text"
@@ -67,7 +87,7 @@ const ProjectDetails = () => {
                                 <Switch />
                             </div>
                         </div>
-                    </header>
+                    </div>
 
                     <main className="mt-10 animate-fade-in">
                         <MyCarousel title={project?.name} image={project?.img} />
@@ -77,7 +97,7 @@ const ProjectDetails = () => {
                             </p>
                         </div>
                     </main>
-                </>
+                </div>
             )}
         </div>
     );

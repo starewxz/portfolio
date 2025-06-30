@@ -18,6 +18,7 @@
     "@tailwindcss/postcss": "^4.1.7",
     "@tailwindcss/vite": "^4.1.7",
     "antd": "^5.25.3",
+    "devicon": "^2.16.0",
     "framer": "^2.4.1",
     "motion": "^12.15.0",
     "prop-types": "^15.8.1",

@@ -20,10 +20,9 @@ const Card = () => {
                     <div className="content">
                         <span className="title">Stanislav Revasevych</span>
                         <span className="text">
-              Hi, I&apos;m Stas — a young and passionate full-stack web developer
-              from Ukraine. I specialize in building clean, efficient, and scalable
-              web applications using modern technologies on both frontend and backend.
-            </span>
+                      I&apos;m Stas, a passionate full-stack developer from Ukraine. I specialize in building modern, efficient, and scalable web applications — from elegant frontends to robust backends.
+                    </span>
+
                     </div>
                     <div className="bottom">
                         <div className="social-buttons-container">
@@ -91,7 +90,7 @@ const Card = () => {
                                 className="view-more-button"
                                 onClick={() => window.open("https://t.me/Sta_Rew")}
                             >
-                                Contact me <FontAwesomeIcon icon={faChevronDown} />
+                                Let’s build the future together <FontAwesomeIcon icon={faChevronDown} />
                             </button>
                         </div>
                     </div>
@@ -116,10 +115,47 @@ const StyledWrapper = styled.div`
         background: linear-gradient(135deg, #001eff 0%, #00d4ff 100%);
         transition: all 0.5s ease-in-out;
         transform-style: preserve-3d;
-        box-shadow:
-                rgba(0, 30, 255, 0) 40px 50px 25px -40px,
-                rgba(0, 212, 255, 0.2) 0px 25px 25px -5px;
+        box-shadow: rgba(0, 30, 255, 0) 40px 50px 25px -40px,
+        rgba(0, 212, 255, 0.2) 0px 25px 25px -5px;
         position: relative;
+        padding: 0 30px 70px 30px;
+
+        @media (max-width: 480px) {
+            padding: 15px 50px 100px 20px;
+            border-radius: 25px;
+
+            .content {
+                padding: 60px 0 0 0;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .content .text {
+                margin-top: 0;
+            }
+
+            .bottom {
+                position: static; /* Remove absolute positioning */
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 0 0 0;
+                width: 100%;
+            }
+
+            .bottom .social-buttons-container {
+                justify-content: center;
+                width: 100%;
+                gap: 15px;
+            }
+
+            .bottom .view-more {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     }
 
     .glass {
@@ -140,31 +176,39 @@ const StyledWrapper = styled.div`
     }
 
     .content {
-        padding: 80px 60px 0px 30px;
+        padding: 80px 60px 0 20px;
         transform: translate3d(0, 0, 26px);
 
         @media (max-width: 640px) {
-            padding: 60px 40px 0 15px;
+            padding: 70px 40px 0 15px;
         }
     }
 
     .content .title {
         display: block;
-        color: #001eff;
-        font-weight: 900;
+        color: #002fa7;
         font-size: 20px;
+        letter-spacing: 0.5px;
+        font-weight: 800;
+        text-shadow: 0 2px 6px rgba(0, 66, 246, 0.8);
 
         @media (max-width: 640px) {
             font-size: 18px;
+            margin-top: 20px;
         }
     }
 
     .content .text {
         display: block;
-        color: rgba(0, 30, 255, 0.76);
-        font-size: 15px;
+        color: #36409e;
+        font-size: 14px;
         margin-top: 100px;
         font-weight: 600;
+        line-height: 1.7;
+
+        @media (max-width: 640px) {
+            margin-top: 80px;
+        }
     }
 
     .bottom {
@@ -183,22 +227,21 @@ const StyledWrapper = styled.div`
     .bottom .view-more {
         display: flex;
         align-items: center;
-        width: 40%;
+        width: 60%;
         justify-content: flex-end;
         transition: all 0.2s ease-in-out;
     }
 
-    .bottom .view-more:hover {
-        transform: translate3d(0, 0, 10px);
-    }
-
     .bottom .view-more .view-more-button {
-        background: none;
         border: none;
         color: #001eff;
-        font-weight: bolder;
-        font-size: 12px;
         cursor: pointer;
+        background-color: #001eff0d;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: background 0.2s ease;
     }
 
     .bottom .view-more .svg {
@@ -223,16 +266,9 @@ const StyledWrapper = styled.div`
         border: none;
         display: grid;
         place-content: center;
-        box-shadow: rgba(0, 30, 255, 0.5) 0px 7px 5px -5px;
         cursor: pointer;
-    }
-
-    .bottom .social-buttons-container .social-button:hover {
-        background: #00d4ff;
-    }
-
-    .bottom .social-buttons-container .social-button:hover .svg {
-        fill: white;
+        transition: all 0.2s ease;
+        box-shadow: 0 6px 12px rgba(0, 30, 255, 0.15);
     }
 
     .bottom .social-buttons-container .social-button:active {
@@ -309,33 +345,56 @@ const StyledWrapper = styled.div`
         place-content: center;
         transition-delay: 1.6s;
     }
+    @media (max-width: 600px) {
+        .logo .circle1,
+        .logo .circle2,
+        .logo .circle3,
+        .logo .circle4 {
+            display: none; /* hide these on mobile */
+        }
 
-    .parent:hover .card {
-        transform: rotate3d(1, 1, 0, 30deg);
-        box-shadow:
-                rgba(0, 30, 255, 0.3) 30px 50px 25px -40px,
-                rgba(0, 30, 255, 0.1) 0px 25px 30px 0px;
-    }
+    @media (hover: hover) and (pointer: fine) {
+        .parent:hover .card {
+            transform: rotate3d(1, 1, 0, 30deg);
+            box-shadow: rgba(0, 30, 255, 0.3) 30px 50px 25px -40px,
+            rgba(0, 30, 255, 0.1) 0px 25px 30px 0px;
+        }
 
-    .parent:hover .card .bottom .social-buttons-container .social-button {
-        transform: translate3d(0, 0, 50px);
-        box-shadow: rgba(0, 30, 255, 0.2) -5px 20px 10px 0px;
-    }
+        .parent:hover .card .bottom .social-buttons-container .social-button {
+            transform: translate3d(0, 0, 50px);
+            box-shadow: rgba(0, 30, 255, 0.2) -5px 20px 10px 0px;
+        }
 
-    .parent:hover .card .logo .circle2 {
-        transform: translate3d(0, 0, 60px);
-    }
+        .parent:hover .card .logo .circle2 {
+            transform: translate3d(0, 0, 60px);
+        }
 
-    .parent:hover .card .logo .circle3 {
-        transform: translate3d(0, 0, 80px);
-    }
+        .parent:hover .card .logo .circle3 {
+            transform: translate3d(0, 0, 80px);
+        }
 
-    .parent:hover .card .logo .circle4 {
-        transform: translate3d(0, 0, 100px);
-    }
+        .parent:hover .card .logo .circle4 {
+            transform: translate3d(0, 0, 100px);
+        }
 
-    .parent:hover .card .logo .circle5 {
-        transform: translate3d(0, 0, 120px);
+        .parent:hover .card .logo .circle5 {
+            transform: translate3d(0, 0, 120px);
+        }
+
+        .bottom .social-buttons-container .social-button:hover {
+            background: #00d4ff;
+        }
+
+        .bottom .social-buttons-container .social-button:hover .svg {
+            fill: white;
+        }
+
+        .bottom .view-more:hover {
+            transform: translate3d(0, 0, 10px);
+        }
+        .bottom .view-more:hover .view-more-button {
+            background-color: #001eff20;
+        }
     }
 `;
 

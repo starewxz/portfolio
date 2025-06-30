@@ -1,9 +1,9 @@
 import Header from "../components /header.jsx";
 import Card from "../components /card.jsx";
 import Stars from "../components /stars.jsx";
-import {useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const SkillsPage = () => {
     const [expandedCards, setExpandedCards] = useState({
@@ -12,6 +12,7 @@ const SkillsPage = () => {
         blockchain: false,
         devOps: false,
     });
+
     const toggleExpand = (cardName) => {
         setExpandedCards((prev) => ({
             ...prev,
@@ -19,164 +20,122 @@ const SkillsPage = () => {
         }));
     };
 
+    const skills = [
+        {
+            key: "frontEnd",
+            title: "Front-end",
+            rating: 3,
+            lists: [
+                { title: "Languages & Core:", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript" },
+                {
+                    title: "Frameworks & Libraries:",
+                    items:
+                        "React.js, Tailwind CSS, Bootstrap, Font Awesome, Ant Design, Styled Components, Next.js",
+                },
+                { title: "Tools:", items: "Git, Vite, ESLint, Vercel, GitHub Pages" },
+                { title: "Design & UX:", items: "Figma, Responsive Design, Accessibility" },
+            ],
+            description:
+                "Front-end development focuses on what users visually interact with in their browser. It combines structure (HTML), style (CSS), and logic (JavaScript/React/etc). I prioritize accessibility, responsive UI, and performance — ensuring an intuitive and fast experience.",
+        },
+        {
+            key: "backEnd",
+            title: "Back-end",
+            rating: 2,
+            lists: [
+                { title: "Languages & Core:", items: "Node.js, SQL" },
+                { title: "Frameworks & Libraries:", items: "Express.js, Nest.js, TypeScript" },
+                { title: "Databases & Storage:", items: "PostgreSQL, MySQL, MongoDB, Firebase" },
+                { title: "Tools & DevOps:", items: "Docker, Git, REST APIs, GraphQL" },
+            ],
+            description:
+                "Back-end development is all about server-side logic, databases, and APIs. It focuses on data storage, security, authentication, and business logic. I strive for scalable, maintainable, and performant back-end systems that support smooth front-end experiences.",
+        },
+        {
+            key: "blockchain",
+            title: "Blockchain / Web3",
+            rating: 1.5,
+            lists: [
+                {
+                    title: "Core Concepts:",
+                    items: "Decentralized Applications (DApps), Smart Contracts, Blockchain fundamentals",
+                },
+                { title: "Libraries & Tools:", items: "web3.js, ethers.js, Solidity (basic)" },
+            ],
+            description:
+                "Developing decentralized apps on blockchain platforms. I build secure and transparent DApps focusing on smart contract interactions and user-friendly blockchain experiences.",
+        },
+        {
+            key: "devOps",
+            title: "DevOps & Deployment",
+            rating: 2,
+            lists: [
+                { title: "Tools & Platforms:", items: "Docker, Vercel, GitHub Pages, Firebase Hosting" },
+                { title: "APIs & Integration:", items: "REST APIs, GraphQL" },
+            ],
+            description:
+                "Experience with deploying applications using modern CI/CD tools, containerization, and cloud hosting services. Ensuring smooth integration and delivery pipelines.",
+        },
+    ];
+
     return (
-        <div className={"pb-5"}>
+        <div className="pb-10 min-h-screen transition-colors duration-400">
             <Header />
-            <div className="animate-fade-in">
-                <Card>
-                    <div className="" onClick={() => toggleExpand('frontEnd')}>
-                        <h3 className="text-3xl font-bold text-cyan-300 cyan-text cursor-pointer mb-1">
-                            Front-end
-                        </h3>
-                        <FontAwesomeIcon
-                            icon={expandedCards.frontEnd ? faChevronUp : faChevronDown}
-                            className="text-cyan-300 text-xl mb-6 cursor-pointer cyan-text"
-                        />
-                    </div>
+            <main className="animate-fade-in px-4 sm:px-8 md:px-16 lg:px-24 max-w-5xl mx-auto">
+                {skills.map(({ key, title, rating, lists, description }) => (
+                    <Card
+                        key={key}
+                        className="mb-8 rounded-xl border border-gray-600 bg-gray-800 transition-colors duration-400"
+                    >
+                        <section className="mb-6">
+                            <div
+                                role="button"
+                                tabIndex={0}
+                                aria-expanded={expandedCards[key]}
+                                onClick={() => toggleExpand(key)}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") toggleExpand(key);
+                                }}
+                                className="flex justify-between items-center cursor-pointer mb-4 select-none"
+                            >
+                                <h3
+                                    className="font-oswald text-2xl sm:text-3xl font-bold cyan-text"
+                                    aria-label={`${title} skills section`}
+                                >
+                                    {title}
+                                </h3>
+                                <FontAwesomeIcon
+                                    icon={expandedCards[key] ? faChevronUp : faChevronDown}
+                                    className={`cyan-text text-xl sm:text-2xl transition-transform duration-300 ${
+                                        expandedCards[key] ? "rotate-180" : ""
+                                    }`}
+                                    aria-hidden="true"
+                                />
+                            </div>
 
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Languages & Core:</p>
-                        <p className="text-base text-[#DBE4FF]">HTML5, CSS3, JavaScript (ES6+), TypeScript</p>
-                    </div>
+                            {lists.map(({ title, items }) => (
+                                <div key={title} className="mb-3">
+                                    <p className="cyan-text font-semibold text-lg sm:text-xl mb-1 select-none">{title}</p>
+                                    <p className="text-gray-300 text-base sm:text-lg leading-relaxed select-text">
+                                        {items}
+                                    </p>
+                                </div>
+                            ))}
 
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Frameworks & Libraries:</p>
-                        <p className="text-base text-[#DBE4FF]">
-                            React.js, Tailwind CSS, Bootstrap, Font Awesome, Ant Design, Styled Components, Next.js
-                        </p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Tools:</p>
-                        <p className="text-base text-[#DBE4FF]">Git, Vite, ESLint, Vercel, GitHub Pages</p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Design & UX:</p>
-                        <p className="text-base text-[#DBE4FF]">Figma, Responsive Design, Accessibility</p>
-                    </div>
-                    {expandedCards.frontEnd && (
-                        <div className="mt-6 p-4 text-left text-[#DBE4FF] bg-cyan-900/20 rounded-lg border border-cyan-300/20">
-                            <p className="text-sm leading-relaxed">
-                                Front-end development focuses on what users visually interact with in their browser. It combines structure (HTML), style (CSS), and logic (JavaScript/React/etc). I prioritize accessibility, responsive UI, and performance — ensuring an intuitive and fast experience.
-                            </p>
-                        </div>
-                    )}
-                    <Stars rating={3} />
-                </Card>
-                <Card>
-                    <div className="" onClick={() => toggleExpand('backEnd')}>
-                        <h3 className="text-3xl font-bold text-cyan-300 cyan-text cursor-pointer mb-1">
-                            Back-end
-                        </h3>
-                        <FontAwesomeIcon
-                            icon={expandedCards.backEnd ? faChevronUp : faChevronDown}
-                            className="text-cyan-300 text-xl mb-6 cursor-pointer cyan-text"
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Languages & Core:</p>
-                        <p className="text-base text-[#DBE4FF]">Node.js, SQL</p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Frameworks & Libraries:</p>
-                        <p className="text-base text-[#DBE4FF]">
-                            Express.js, Nest.js, TypeScript
-                        </p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Databases & Storage:</p>
-                        <p className="text-base text-[#DBE4FF]">
-                            PostgreSQL, MySQL, MongoDB, Firebase
-                        </p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Tools & DevOps:</p>
-                        <p className="text-base text-[#DBE4FF]">
-                            Docker, Git, REST APIs, GraphQL
-                        </p>
-                    </div>
-
-                    {expandedCards.backEnd && (
-                        <div className="mt-6 p-4 text-left text-[#DBE4FF] bg-cyan-900/20 rounded-lg border border-cyan-300/20">
-                            <p className="text-sm leading-relaxed">
-                                Back-end development is all about server-side logic, databases, and APIs. It focuses on data storage, security, authentication, and business logic. I strive for scalable, maintainable, and performant back-end systems that support smooth front-end experiences.
-                            </p>
-                        </div>
-                    )}
-                    <Stars rating={2} />
-                </Card>
-                <Card>
-                    <div onClick={() => toggleExpand('blockchain')}>
-                        <h3 className="text-3xl font-bold text-cyan-300 cyan-text cursor-pointer mb-1">
-                            Blockchain / Web3
-                        </h3>
-                        <FontAwesomeIcon
-                            icon={expandedCards.blockchain ? faChevronUp : faChevronDown}
-                            className="text-cyan-300 text-xl mb-6 cursor-pointer cyan-text"
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Core Concepts:</p>
-                        <p className="text-base text-[#DBE4FF]">
-                            Decentralized Applications (DApps), Smart Contracts, Blockchain fundamentals
-                        </p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Libraries & Tools:</p>
-                        <p className="text-base text-[#DBE4FF]">web3.js, ethers.js, Solidity (basic)</p>
-                    </div>
-
-                    {expandedCards.blockchain && (
-                        <div className="mt-6 p-4 text-left text-[#DBE4FF] bg-cyan-900/20 rounded-lg border border-cyan-300/20">
-                            <p className="text-sm leading-relaxed">
-                                Developing decentralized apps on blockchain platforms. I build secure and transparent DApps focusing on smart contract interactions and user-friendly blockchain experiences.
-                            </p>
-                        </div>
-                    )}
-                    <Stars rating={1.5} />
-                </Card>
-                <Card>
-                    <div onClick={() => toggleExpand('devOps')}>
-                        <h3 className="text-3xl font-bold text-cyan-300 cyan-text cursor-pointer mb-1">
-                            DevOps & Deployment
-                        </h3>
-                        <FontAwesomeIcon
-                            icon={expandedCards.devOps ? faChevronUp : faChevronDown}
-                            className="text-cyan-300 text-xl mb-6 cursor-pointer cyan-text"
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">Tools & Platforms:</p>
-                        <p className="text-base text-[#DBE4FF]">Docker, Vercel, GitHub Pages, Firebase Hosting</p>
-                    </div>
-
-                    <div className="mb-4">
-                        <p className="text-lg text-cyan-100 font-semibold">APIs & Integration:</p>
-                        <p className="text-base text-[#DBE4FF]">REST APIs, GraphQL</p>
-                    </div>
-
-                    {expandedCards.devOps && (
-                        <div className="mt-6 p-4 text-left text-[#DBE4FF] bg-cyan-900/20 rounded-lg border border-cyan-300/20">
-                            <p className="text-sm leading-relaxed">
-                                Experience with deploying applications using modern CI/CD tools, containerization, and cloud hosting services. Ensuring smooth integration and delivery pipelines.
-                            </p>
-                        </div>
-                    )}
-                    <Stars rating={2} />
-                </Card>
-
-
-            </div>
+                            {expandedCards[key] && (
+                                <div
+                                    className="mt-6 p-4 rounded-xl border border-gray-500 bg-gray-700 text-gray-200 select-text text-sm sm:text-base leading-relaxed transition-colors duration-400"
+                                >
+                                    {description}
+                                </div>
+                            )}
+                            <Stars rating={rating} />
+                        </section>
+                    </Card>
+                ))}
+            </main>
         </div>
-    )
-}
+    );
+};
 
 export default SkillsPage;
