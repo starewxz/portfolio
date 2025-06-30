@@ -352,6 +352,7 @@ const StyledWrapper = styled.div`
         .logo .circle4 {
             display: none; /* hide these on mobile */
         }
+    }
 
     @media (hover: hover) and (pointer: fine) {
         .parent:hover .card {

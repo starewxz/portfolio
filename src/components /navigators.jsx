@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+import {AnimatePresence, motion} from "framer-motion";
 
 const pathToTab = {
     '/': 'Home',
@@ -26,31 +27,45 @@ const Navigators = ({ mobile, onNavigate }) => {
     }, [location.pathname]);
 
     const navItems = ['Home', 'About me', 'Projects', 'Skills'];
+    const navVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: i => ({
+            opacity: 1,
+            x: 0,
+            transition: { delay: i * 0.1, type: "spring", stiffness: 120 },
+        }),
+        exit: { opacity: 0, x: -20, transition: { duration: 0.2 } },
+        active: { scale: 1.05, backgroundColor: "rgb(14 165 233)", color: "white", boxShadow: "0 0 10px rgb(14 165 233)" },
+        inactive: { scale: 1, backgroundColor: "transparent", color: "rgb(209 213 219)", boxShadow: "none" },
+    };
 
     if (mobile) {
         return (
             <div className="flex flex-col w-full gap-4 px-4 py-6 rounded-xl backdrop-blur-md bg-white/10 dark:bg-white/5 border border-white/20 shadow-md navigator-glass">
-                {navItems.map((item, i) => (
-                    <button
-                        key={item}
-                        onClick={() => {
-                            setActiveTab(item);
-                            if (onNavigate) onNavigate();
-                            setTimeout(() => {
-                                navigate(tabToPath[item]);
-                            }, 300);
-                        }}
-                        className={`mob w-full text-left px-4 py-3 rounded-md font-semibold transition
-                        ${
-                            activeTab === item
-                                ? 'bg-cyan-500 text-white shadow-lg'
-                                : 'text-gray-300 hover:bg-cyan-600 hover:text-white'
-                        } animate-slide-in-left`}
-                        style={{ animationDelay: `${i * 150}ms` }}
-                    >
-                        {item}
-                    </button>
-                ))}
+                <AnimatePresence>
+                    {navItems.map((item, i) => (
+                        <motion.button
+                            key={item}
+                            custom={i}
+                            variants={navVariants}
+                            initial="hidden"
+                            animate={["visible", activeTab === item ? "active" : "inactive"]}
+                            exit="exit"
+                            layout
+                            onClick={() => {
+                                setActiveTab(item);
+                                if (onNavigate) onNavigate();
+                                setTimeout(() => {
+                                    navigate(tabToPath[item]);
+                                }, 300);
+                            }}
+                            className="mob w-full text-left px-4 py-3 rounded-md font-semibold transition"
+                            style={{ originX: 0 }}
+                        >
+                            {item}
+                        </motion.button>
+                    ))}
+                </AnimatePresence>
             </div>
         );
     }
