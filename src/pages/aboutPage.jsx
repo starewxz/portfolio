@@ -88,7 +88,7 @@ const AboutPage = () => {
                     </p>
 
                     <p className="mb-4 leading-relaxed">
-                        My first big project was creating a landing site for my brother’s online{" "}
+                        My first big project was creating a landing site for online{" "}
                         <p className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
                           slippers store
                         </p>{" "}
