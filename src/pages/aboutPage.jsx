@@ -73,31 +73,43 @@ const AboutPage = () => {
 
                 <Card className="mb-8 rounded-xl border border-gray-600 bg-gray-800 dark:bg-gray-100 transition-colors duration-400 p-6">
                     <p className="mb-4 leading-relaxed">
-                        I’m a 16-year-old passionate full-stack web developer from Ukraine. I began programming in the spring of 2024, after deciding to quit playing football.
-                        Fun fact: before I started coding, I had very little experience with computers. I didn’t play many video games, and when I did, it wasn’t on a PC.
-                        So, beginning my programming journey felt like a completely new adventure.
+                        I’m a 16-year-old passionate full-stack web developer from Ukraine. I began programming in the spring of 2024, after deciding to leave behind my football career.
+                        Fun fact — before I got into coding, I had almost no experience with computers.
+                        I wasn’t into gaming, and when I did play, it wasn’t even on a PC. So diving into programming truly felt like stepping into an entirely new world.
                     </p>
 
                     <p className="mb-4 leading-relaxed">
-                        I started with free courses on YouTube and, as I got more serious, I invested in quality courses on Udemy.
-                        After about a year of dedicated learning, I’m proud of the progress I’ve made. Just a year ago, my first project was a simple{" "}
-                        <p className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/timer")}>
-                          timer for Rubik’s Cube
-                        </p>{" "}
-                        — nothing like the portfolio I’ve built today.
+                        My journey started with free YouTube tutorials, and as my passion grew, I began investing in quality courses on Udemy.
+                        After about a year of consistent learning, I’m proud of how far I’ve come — from building a simple {" "}
+                        <span className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/timer")}>
+                            Rubik’s Cube timer
+                        </span>{" "}
+                        as my first project to developing full-featured, real-world applications showcased in my portfolio.
                     </p>
 
                     <p className="mb-4 leading-relaxed">
-                        My first big project was creating a landing site for online{" "}
-                        <p className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
+                        One of my biggest milestones was building a landing page for an online{" "}
+                        <span className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
                           slippers store
-                        </p>{" "}
-                        , which you can also check out on the projects page. Over time, I’ve connected with many programmer friends, which helps me grow and stay motivated.
+                        </span>{" "}
+                        — a project I designed and developed entirely on my own. Over time, I’ve also connected with other developers and mentors, whose support continues to help me grow and stay motivated.
                     </p>
 
                     <p className="mb-4 leading-relaxed">
-                        Outside of programming, I’m very passionate about sports and active vacations. I train in boxing regularly, and during holidays, I love playing volleyball or football with friends.
-                        Staying active keeps me balanced and energized for all my projects.
+                        But this path hasn’t always been easy. Like many self-taught learners, I’ve gone through periods of self-doubt, burnout, and mental blocks.
+                        Some topics — especially parts of JavaScript or backend logic — were incredibly challenging at first. There were moments I felt stuck, even afraid to start something new or take on more serious, commercial projects. {" "}
+                        <span className={'font-inter italic'}>But I moved on on this fear and started creating.</span> {" "}I’ve learned that growth often comes through those uncomfortable steps forward — <span className={'font-inter italic'}>you have to go through it in order to develop.</span>
+                        {" "}I’ve made it a rule to stay consistent, even if it’s just 5 minutes of learning on a tough day — progress, no matter how small, still counts.
+                    </p>
+
+                    <p>
+                        Beyond coding, I’m passionate about sports and staying active. I train in boxing and enjoy spending time outdoors, whether it&apos;s playing volleyball, football, or just being with friends.
+                        Staying physically active helps me stay mentally balanced and recharged for every new challenge.
+                    </p>
+
+                    <p>
+                        Thanks for taking the time to learn a bit about me.
+                        I invite you to explore my projects — each one represents a part of my journey as a developer.
                     </p>
 
                     <p className="mb-4 leading-relaxed">Feel free to explore my projects on the next page!</p>

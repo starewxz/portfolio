@@ -8,7 +8,7 @@ import {
     siFontawesome,
     siFramer,
     siAutoprefixer,
-} from "simple-icons/icons";
+} from "simple-icons";
 
 
 const techData = {

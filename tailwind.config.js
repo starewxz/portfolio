@@ -32,6 +32,9 @@ export default {
                 'slide-in-right-delay': 'slide-in-right 0.8s ease-out forwards 0.3s',
             }
         },
+        fontFamily: {
+            'inter' : ['Inter', 'sans-serif'],
+        }
     },
     plugins: [],
 }
