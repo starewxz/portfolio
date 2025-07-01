@@ -72,7 +72,7 @@ const Navigators = ({ mobile, onNavigate }) => {
 
     // Desktop version - keep the original style
     return (
-        <div className="navigator-glass absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-3 rounded-xl backdrop-blur-md bg-white/10 dark:bg-white/5 border border-white/20 shadow-lg flex gap-4 sm:gap-10 text-white text-base sm:text-2xl font-bold">
+        <div className="navigator-glass absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-3 rounded-xl flex gap-4 sm:gap-10 text-base sm:text-2xl font-bold">
             {navItems.map((item, i) => (
                 <h2
                     key={item}

@@ -31,10 +31,6 @@ header {
     text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
 }
 
-body.light-theme header {
-    background-color: #bae6fd;
-    text-shadow: none;
-}
 .sidebar {
     background-color: #1e293b;
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
@@ -64,10 +60,6 @@ body.light-theme button:hover .hamburger-bar {
 
 body.light-theme .hamburger-bar {
     background-color: #334155;
-}
-
-body.light-theme header {
-    background-color: #D4FCFC;
 }
 
 .cyan-text:hover {
@@ -171,17 +163,20 @@ body.light-theme .sidebar {
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
 }
 .navigator-glass {
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     z-index: 20;
     backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.08); /* Light transparent bg */
+    background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
+    color: white;
 }
 
 body.light-theme .navigator-glass {
-    background-color: rgba(255, 255, 255, 0.35);
-    color: #334155;
+    background-color: rgba(212, 252, 252, 0.8) !important;
+    color: #334155 !important;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    transition: all 0.3s ease;
 }
 @keyframes slideInLeft {
     0% {
@@ -246,17 +241,48 @@ body.light-theme .text-gray-200 {
     border-radius: 1rem;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
     transition: background-color 0.4s ease;
-    padding: 1rem 1.75rem; /* spacing */
+    padding: 1rem 1.75rem;
     color: #DBE4FF;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-header.scrolled {
-    background: rgba(255, 255, 255, 0.3);
+.bg-transparent {
+    background: transparent;
+    color: white;
+}
+
+.scrolled {
+    background-color: rgba(31, 41, 55, 0.3);
+    border-color: rgba(55, 65, 81, 0.7);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    color: black;
     transition: background-color 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
 }
+
+body.light-theme .scrolled {
+    background-color: #D4FCFCcc !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 252, 252, 0.8) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    color: #334155;
+}
+
+.glow-blur {
+    filter: blur(70px);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-52%, -48%) scale(1.05);
+    }
+}
+

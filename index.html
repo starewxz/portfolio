@@ -23,11 +23,11 @@
           const theme = localStorage.getItem('theme');
           if (theme === 'dark') {
             document.documentElement.classList.add('dark');
-            document.body.style.backgroundColor = '#164e63';
+            document.body.style.backgroundColor = '#0f172a';
           } else if (theme === 'light') {
             document.documentElement.classList.remove('dark');
             document.body.classList.add('light-theme');
-            document.body.style.backgroundColor = '#A5E0FA';
+            document.body.style.backgroundColor = '#bae6fd';
           }
         } catch(e) {
           // in case localStorage is blocked or unavailable

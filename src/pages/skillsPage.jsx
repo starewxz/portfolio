@@ -1,9 +1,10 @@
 import Header from "../components /header.jsx";
 import Card from "../components /card.jsx";
-import Stars from "../components /stars.jsx";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import TechIcon from "../components /tech-icon.jsx";
+import techData from "../services/techData.js";
 
 const SkillsPage = () => {
     const [expandedCards, setExpandedCards] = useState({
@@ -24,13 +25,12 @@ const SkillsPage = () => {
         {
             key: "frontEnd",
             title: "Front-end",
-            rating: 3,
             lists: [
-                { title: "Languages & Core:", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript" },
+                { title: "Languages & Core:", items: "HTML5, CSS3, JavaScript, TypeScript" },
                 {
                     title: "Frameworks & Libraries:",
                     items:
-                        "React.js, Tailwind CSS, Bootstrap, Font Awesome, Ant Design, Styled Components, Next.js",
+                        "React, Tailwind, Bootstrap, Font Awesome, Ant Design, Styled Components, Next",
                 },
                 { title: "Tools:", items: "Git, Vite, ESLint, Vercel, GitHub Pages" },
                 { title: "Design & UX:", items: "Figma, Responsive Design, Accessibility" },
@@ -41,11 +41,10 @@ const SkillsPage = () => {
         {
             key: "backEnd",
             title: "Back-end",
-            rating: 2,
             lists: [
-                { title: "Languages & Core:", items: "Node.js, SQL" },
-                { title: "Frameworks & Libraries:", items: "Express.js, Nest.js, TypeScript" },
-                { title: "Databases & Storage:", items: "PostgreSQL, MySQL, MongoDB, Firebase" },
+                { title: "Languages & Core:", items: "TypeScript, SQL" },
+                { title: "Frameworks & Libraries:", items: "Express, Nest, Node" },
+                { title: "Databases & Storage:", items: "PostgreSQL, MySQL, MongoDB, Firebase " },
                 { title: "Tools & DevOps:", items: "Docker, Git, REST APIs, GraphQL" },
             ],
             description:
@@ -54,13 +53,12 @@ const SkillsPage = () => {
         {
             key: "blockchain",
             title: "Blockchain / Web3",
-            rating: 1.5,
             lists: [
                 {
                     title: "Core Concepts:",
                     items: "Decentralized Applications (DApps), Smart Contracts, Blockchain fundamentals",
                 },
-                { title: "Libraries & Tools:", items: "web3.js, ethers.js, Solidity (basic)" },
+                { title: "Libraries & Tools:", items: "web3.js, ethers.js, Solidity" },
             ],
             description:
                 "Developing decentralized apps on blockchain platforms. I build secure and transparent DApps focusing on smart contract interactions and user-friendly blockchain experiences.",
@@ -68,7 +66,6 @@ const SkillsPage = () => {
         {
             key: "devOps",
             title: "DevOps & Deployment",
-            rating: 2,
             lists: [
                 { title: "Tools & Platforms:", items: "Docker, Vercel, GitHub Pages, Firebase Hosting" },
                 { title: "APIs & Integration:", items: "REST APIs, GraphQL" },
@@ -81,8 +78,8 @@ const SkillsPage = () => {
     return (
         <div className="pb-10 min-h-screen transition-colors duration-400">
             <Header />
-            <main className="animate-fade-in px-4 sm:px-8 md:px-16 lg:px-24 max-w-5xl mx-auto">
-                {skills.map(({ key, title, rating, lists, description }) => (
+            <main className="animate-fade-in px-4 sm:px-8 md:px-16 lg:px-24 max-w-5xl mx-auto mt-16">
+                {skills.map(({ key, title, lists, description }) => (
                     <Card
                         key={key}
                         className="mb-8 rounded-xl border border-gray-600 bg-gray-800 transition-colors duration-400"
@@ -116,9 +113,28 @@ const SkillsPage = () => {
                             {lists.map(({ title, items }) => (
                                 <div key={title} className="mb-3">
                                     <p className="cyan-text font-semibold text-lg sm:text-xl mb-1 select-none">{title}</p>
-                                    <p className="text-gray-300 text-base sm:text-lg leading-relaxed select-text">
-                                        {items}
-                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-2">
+                                        {items.split(",").map((name) => {
+                                            const trimmed = name.trim();
+                                            const tech = techData[trimmed];
+                                            return tech ? (
+                                                <TechIcon
+                                                    key={trimmed}
+                                                    techName={trimmed}
+                                                    icon={tech.icon}
+                                                    url={tech.url}
+                                                    color={tech.color}
+                                                />
+                                            ) : (
+                                                <span
+                                                    key={trimmed}
+                                                    className="px-3 py-2 text-gray-400 text-sm border border-white/10 rounded-md bg-white/5"
+                                                >
+                                                  {trimmed}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
                             ))}
 
@@ -129,7 +145,6 @@ const SkillsPage = () => {
                                     {description}
                                 </div>
                             )}
-                            <Stars rating={rating} />
                         </section>
                     </Card>
                 ))}

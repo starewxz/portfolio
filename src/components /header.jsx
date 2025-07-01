@@ -7,66 +7,70 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+    const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
 
     useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 10);
-        };
+        const onScroll = () => setScrolled(window.scrollY > 10);
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
     useEffect(() => {
-        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
+        document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
     }, [isMobileMenuOpen]);
 
     return (
         <>
             <header
-                className={`w-full z-40 fixed top-0 left-0 flex items-center justify-between px-4 py-4 transition-colors duration-300
-                ${
-                    scrolled
-                        ? "bg-white/30 dark:bg-gray-900/30 backdrop-blur-md border border-white/30 dark:border-gray-700 rounded-xl shadow-lg"
-                        : "bg-transparent"
-                }
-                `}
-                style={{ transitionProperty: "background-color, border-radius, box-shadow" }}
+                className={`fixed top-0 left-0 w-full z-40 flex items-center justify-between px-6 py-4 transition-all duration-300
+                ${ scrolled ? "scrolled shadow-lg" : "bg-transparent"}`}
+                style={{
+                    transitionProperty: "background-color, border-radius, box-shadow",
+                    WebkitBackdropFilter: "blur(16px)",
+                    backdropFilter: "blur(16px)",
+                    marginBottom: "30px",
+                }}
+                role="banner"
             >
+                {/* Logo */}
                 <h1
-                    className={`text-white text-xl sm:text-3xl md:text-4xl font-bold animate-slide-in-left-delay ml-2 sm:ml-12
-                    ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`}
+                    className={`flex flex-col leading-none cursor-default select-none
+            ${
+                        scrolled
+                            ? "text-gray-900 dark:text-white"
+                            : "text-white"
+                    }`}
+                    aria-label="Portfolio of Revasevych Stanislav"
                 >
-                    <div>
-                        Port<span className="text-cyan-400 text-base sm:text-2xl">folio</span>
-                    </div>
-                    <div
-                        className="mt-1 ml-1 sm:ml-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-semibold text-sm sm:text-lg tracking-wide"
+          <span
+              className="text-2xl sm:text-4xl font-bold transition-transform duration-300 hover:scale-105"
+          >
+            Port<span className="text-cyan-400 text-xl sm:text-2xl">folio</span>
+          </span>
+                    <small
+                        className="mt-1 text-sm sm:text-lg font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-wide"
                     >
                         Revasevych Stanislav
-                    </div>
+                    </small>
                 </h1>
 
-                {/* Desktop nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
                     <Navigators
                         onNavigate={() => {
-                            setTimeout(() => {
-                                setIsMobileMenuOpen(false);
-                            }, 400);
+                            setTimeout(() => setIsMobileMenuOpen(false), 400);
                         }}
                     />
                 </nav>
 
-                {/* Desktop theme switch */}
+                {/* Desktop Theme Switch */}
                 <div className="hidden md:flex items-center gap-8">
                     <div className="animate-slide-in-top">
                         <Switch />
                     </div>
                 </div>
 
-                {/* Hamburger icon with glassmorphism */}
+                {/* Mobile Hamburger Button */}
                 <AnimatePresence>
                     {!isMobileMenuOpen && (
                         <motion.div
@@ -78,12 +82,12 @@ const Header = () => {
                             className="absolute top-4 right-4 z-60 md:hidden"
                         >
                             <button
-                                className="md:hidden relative flex flex-col justify-center items-center gap-1 w-12 h-12 cursor-pointer focus:outline-none z-60 rounded-xl
-                                          bg-white/10 backdrop-blur-sm border border-white/20 shadow-md
-                                          hover:bg-white/20 hover:border-white/30 hover:shadow-cyan-400/40
-                                           "
-                                aria-label="Open menu"
                                 onClick={toggleMobileMenu}
+                                aria-label="Open menu"
+                                className="flex flex-col justify-center items-center gap-1 w-12 h-12 rounded-xl
+                bg-white/10 backdrop-blur-sm border border-white/20 shadow-md
+                hover:bg-white/20 hover:border-white/30 hover:shadow-cyan-400/40
+                focus:outline-none focus:ring-2 focus:ring-cyan-400"
                             >
                                 <span className="hamburger-bar block h-1 w-7 rounded bg-white" />
                                 <span className="hamburger-bar block h-1 w-7 rounded bg-white" />
@@ -93,48 +97,51 @@ const Header = () => {
                     )}
                 </AnimatePresence>
             </header>
-            {/* Sidebar */}
-                <aside
-                    className={`sidebar z-50 fixed top-0 right-0 h-full w-64 bg-gray-900 dark:bg-gray-800 shadow-2xl backdrop-blur-sm flex flex-col justify-between transition-transform duration-500 ease-in-out ${
-                        isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-                    }`}
-                >
-                    <AnimatePresence>
-                        {isMobileMenuOpen && (
-                            <motion.div
-                                layoutId="hamburger"
-                                key="hamburger-sidebar"
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 20 }}
-                                transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
-                                className="absolute top-4 right-4 z-50 md:hidden mb-8"
-                            >
+
+            {/* Sidebar for mobile */}
+            <aside
+                className={`sidebar fixed top-0 right-0 z-50 h-full w-64 bg-gray-900 dark:bg-gray-800 shadow-2xl backdrop-blur-sm
+        flex flex-col justify-between transition-transform duration-500 ease-in-out
+        ${isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+                aria-hidden={!isMobileMenuOpen}
+            >
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            layoutId="hamburger"
+                            key="hamburger-sidebar"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 20 }}
+                            transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                            className="absolute top-4 right-4 z-50 md:hidden mb-8"
+                        >
                             <div className="flex justify-end p-4">
                                 <button
-                                    className="relative flex flex-col justify-center items-center gap-1 w-12 h-12 cursor-pointer focus:outline-none z-60 rounded-xl
-                                              bg-white/10 backdrop-blur-sm border border-white/20 shadow-md
-                                              hover:bg-white/20 hover:border-white/30 hover:shadow-cyan-400/40
-                                               "
-                                    aria-label="Close menu"
                                     onClick={toggleMobileMenu}
+                                    aria-label="Close menu"
+                                    className="flex flex-col justify-center items-center gap-1 w-12 h-12 rounded-xl
+                    bg-white/10 backdrop-blur-sm border border-white/20 shadow-md
+                    hover:bg-white/20 hover:border-white/30 hover:shadow-cyan-400/40
+                    focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                 >
                                     <span className="hamburger-bar block h-1 w-7 rotate-45 translate-y-2.5 bg-cyan-400 rounded transition-transform duration-300" />
                                     <span className="hamburger-bar block h-1 w-7 opacity-0 bg-white rounded" />
                                     <span className="hamburger-bar block h-1 w-7 -rotate-45 -translate-y-2.5 bg-cyan-400 rounded transition-transform duration-300" />
                                 </button>
                             </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                    <nav className="flex flex-col gap-6 px-6 pt-16 flex-grow">
-                        <Navigators mobile />
-                    </nav>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
-                    <div className="border-t border-gray-700 dark:border-gray-600 px-6 py-6 flex justify-center">
-                        <Switch />
-                    </div>
-                </aside>
+                <nav className="flex flex-col gap-6 px-6 pt-16 flex-grow" aria-label="Mobile navigation">
+                    <Navigators mobile />
+                </nav>
+
+                <div className="border-t border-gray-700 dark:border-gray-600 px-6 py-6 flex justify-center">
+                    <Switch />
+                </div>
+            </aside>
 
             {/* Overlay */}
             {isMobileMenuOpen && (
