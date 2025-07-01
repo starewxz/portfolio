@@ -34,12 +34,7 @@ const Header = () => {
             >
                 {/* Logo */}
                 <h1
-                    className={`flex flex-col leading-none cursor-default select-none
-            ${
-                        scrolled
-                            ? "text-gray-900 dark:text-white"
-                            : "text-white"
-                    }`}
+                    className={"flex flex-col leading-none cursor-default select-none"}
                     aria-label="Portfolio of Revasevych Stanislav"
                 >
           <span
