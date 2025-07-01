@@ -174,7 +174,7 @@ body.light-theme .sidebar {
 
 body.light-theme .navigator-glass {
     background-color: rgba(212, 252, 252, 0.8) !important;
-    color: #334155 !important;
+    color: #334155;
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
     transition: all 0.3s ease;
 }
