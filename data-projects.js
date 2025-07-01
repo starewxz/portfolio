@@ -1,7 +1,7 @@
 const dataProjects = [
     {
         id: "fluffy-steps",
-        name: "Fluffy steps",
+        name: "🐾 Fluffy steps",
         img: [
             `${import.meta.env.BASE_URL}projects/fluffy1.jpeg`,
             `${import.meta.env.BASE_URL}projects/fluffy2.jpeg`,
@@ -22,7 +22,7 @@ const dataProjects = [
     },
     {
         id: "kuzco-crm",
-        name: "Kuzco CRM",
+        name: "💻 Kuzco CRM",
         img: [
             `${import.meta.env.BASE_URL}projects/kuzco1.jpeg`,
             `${import.meta.env.BASE_URL}projects/kuzco2.jpeg`,
@@ -34,14 +34,14 @@ const dataProjects = [
             "It was my first time working on a project with a fully developed backend and local server, which helped me grow a lot as a developer. I can’t share the project link because it runs locally and contains confidential data.",
         textAbout: "This project represents my first experience working on a fully developed, large-scale web application — a CRM system for a laptop store. You can check out the business on Instagram: @kuzco.shop .\n" +
             "It’s a collaborative project I’m building with a close friend who is a highly skilled and experienced developer. Working alongside him has been an amazing opportunity to learn industry-level practices, receive mentorship, and improve much faster through real-time feedback.\n" +
-            "This is also my first time working with a well-structured backend architecture, including a local server, advanced routing, and secure data handling. Although I can’t share access to the project (since it’s running locally and includes confidential information), it has significantly boosted my backend development skills and my ability to work in a team on complex systems.",
+            "This is also my first time working with a well-structured backend architecture, including a developed server, advanced routing, and secure data handling. Although I can’t provide access to the project due to confidentiality, it played a key role in strengthening my backend development skills and enhancing my ability to collaborate on complex, team-based systems.",
         tech: ["React", "HTML5", "CSS3", "JavaScript (ES6+)", "Font Awesome", "Ant Design", "ESLint", "GitHub Pages", "Git", "Framer Motion", "Vite", "React Router", "Axios", "Autoprefixer", "PostCSS", "Nest", "TypeScript", "MongoDB", "Mongoose",
             "Axios", "ESLint",
 ]
     },
     {
         id: "timer",
-        name: "Timer",
+        name: "⏱️Timer",
         img: [
             `${import.meta.env.BASE_URL}projects/timer1.jpeg`,
             `${import.meta.env.BASE_URL}projects/timer2.jpeg`,
@@ -50,7 +50,7 @@ const dataProjects = [
             `${import.meta.env.BASE_URL}projects/timer5.jpeg`,
         ],
         text: "This was my very first pet project — as you may have seen on my About Me page. It was a great learning experience and turned out to be a small but very useful tool.\n" +
-            "Built using plain JavaScript at the beginning of my programming journey, this project is designed for laptop users. It tracks and saves your Rubik's Cube solving times, generates scrambles using a dedicated library, and features a clean, easy-to-use interface. While it isn’t responsive for mobile yet, it’s a solid and practical tool.",
+            "Built using plain JavaScript at the beginning of my programming journey, this project is designed for laptop users. It tracks and saves your Rubik's Cube solving times, generates scrambles using a dedicated library, and features a clean, easy-to-use interface. While it isn’t full responsive for mobile yet, it’s a solid and practical tool.",
         link: "https://starewxz.github.io/cube-timer-/timer.html",
         textAbout: "This was the first pet project I built at the very beginning of my development journey. It’s a simple yet practical Rubik's Cube timer and result tracker created entirely with vanilla JavaScript. At the time, I wanted to deepen my understanding of the core web technologies without relying on any frameworks — and this project became the perfect way to do that.\n" +
             "\n" +
@@ -61,7 +61,7 @@ const dataProjects = [
     },
     {
         id: "note-keeper",
-        name: "Luna (note keeper)",
+        name: "📝Luna (note keeper)",
         img: [
             `${import.meta.env.BASE_URL}projects/Luna1.png`,
             `${import.meta.env.BASE_URL}projects/Luna2.png`,
