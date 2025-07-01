@@ -26,29 +26,35 @@ const SkillsPage = () => {
             key: "frontEnd",
             title: "Front-end",
             lists: [
-                { title: "Languages & Core:", items: "HTML5, CSS3, JavaScript, TypeScript" },
+                { title: "Languages & Core:", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript" },
                 {
                     title: "Frameworks & Libraries:",
                     items:
-                        "React, Tailwind, Bootstrap, Font Awesome, Ant Design, Styled Components, Next",
+                        "React, Tailwind, Bootstrap, Font Awesome, Ant Design, Styled Components, Next, React Router, Framer Motion",
                 },
-                { title: "Tools:", items: "Git, Vite, ESLint, Vercel, GitHub Pages" },
-                { title: "Design & UX:", items: "Figma, Responsive Design, Accessibility" },
+                {
+                    title: "Build Tools & Package Managers:",
+                    items: "Vite, NPM, ESLint, PostCSS, Autoprefixer",
+                },
+                {
+                    title: "UI & Design Tools:",
+                    items: "Figma, Responsive Design, Accessibility",
+                },
             ],
             description:
-                "Front-end development focuses on what users visually interact with in their browser. It combines structure (HTML), style (CSS), and logic (JavaScript/React/etc). I prioritize accessibility, responsive UI, and performance — ensuring an intuitive and fast experience.",
+                "Front-end development focuses on user interaction and UI with an emphasis on accessibility and performance.",
         },
         {
             key: "backEnd",
             title: "Back-end",
             lists: [
                 { title: "Languages & Core:", items: "TypeScript, SQL" },
-                { title: "Frameworks & Libraries:", items: "Express, Nest, Node" },
-                { title: "Databases & Storage:", items: "PostgreSQL, MySQL, MongoDB, Firebase " },
+                { title: "Frameworks & Libraries:", items: "Express, Nest, Node, Axios, Mongoose" },
+                { title: "Databases & Storage:", items: "PostgreSQL, MySQL, MongoDB, Firebase" },
                 { title: "Tools & DevOps:", items: "Docker, Git, REST APIs, GraphQL" },
             ],
             description:
-                "Back-end development is all about server-side logic, databases, and APIs. It focuses on data storage, security, authentication, and business logic. I strive for scalable, maintainable, and performant back-end systems that support smooth front-end experiences.",
+                "Server-side logic, databases, APIs, and ensuring scalable and maintainable back-end systems.",
         },
         {
             key: "blockchain",
@@ -56,12 +62,12 @@ const SkillsPage = () => {
             lists: [
                 {
                     title: "Core Concepts:",
-                    items: "Decentralized Applications (DApps), Smart Contracts, Blockchain fundamentals",
+                    items: "DApps, Smart Contracts, Blockchain fundamentals",
                 },
                 { title: "Libraries & Tools:", items: "web3.js, ethers.js, Solidity" },
             ],
             description:
-                "Developing decentralized apps on blockchain platforms. I build secure and transparent DApps focusing on smart contract interactions and user-friendly blockchain experiences.",
+                "Building decentralized applications with smart contract interactions and secure blockchain integration.",
         },
         {
             key: "devOps",
@@ -71,7 +77,19 @@ const SkillsPage = () => {
                 { title: "APIs & Integration:", items: "REST APIs, GraphQL" },
             ],
             description:
-                "Experience with deploying applications using modern CI/CD tools, containerization, and cloud hosting services. Ensuring smooth integration and delivery pipelines.",
+                "Deploying applications with modern CI/CD, containerization, and cloud hosting.",
+        },
+        {
+            key: "projectManagement",
+            title: "Project Management & Collaboration",
+            lists: [
+                {
+                    title: "Tools:",
+                    items: "Trello, Notion, Jira",
+                },
+            ],
+            description:
+                "Managing projects, workflows, documentation, and team collaboration using Trello, Notion, and Jira.",
         },
     ];
 
@@ -124,6 +142,7 @@ const SkillsPage = () => {
                                                     icon={tech.icon}
                                                     url={tech.url}
                                                     color={tech.color}
+                                                    isDarkIcon={tech.isDarkIcon}
                                                 />
                                             ) : (
                                                 <span

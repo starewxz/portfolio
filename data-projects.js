@@ -18,6 +18,7 @@ const dataProjects = [
             "It was also my first hands-on experience building a real-world application with React, integrating frontend animations using Framer Motion, and connecting to a cloud database (Firebase) to handle product data and customer orders.\n" +
             "Beyond just coding, I learned how to structure and manage a complete project — from setting up responsive layouts and reusable components to handling forms, validation, and real-time updates.\n" +
             "This project pushed me to apply everything I had learned and explore new tools and techniques. It was a meaningful step in my journey as a web developer — full of both challenges and breakthroughs.",
+        tech: ["React", "HTML5", "CSS3", "JavaScript (ES6+)", "Firebase", "Font Awesome", "Bootstrap", "Ant Design", "ESLint", "Vercel", "GitHub Pages", "Git", "Framer Motion", "Vite", "React Router", "Axios"],
     },
     {
         id: "kuzco-crm",
@@ -34,6 +35,9 @@ const dataProjects = [
         textAbout: "This project represents my first experience working on a fully developed, large-scale web application — a CRM system for a laptop store. You can check out the business on Instagram: @kuzco.shop .\n" +
             "It’s a collaborative project I’m building with a close friend who is a highly skilled and experienced developer. Working alongside him has been an amazing opportunity to learn industry-level practices, receive mentorship, and improve much faster through real-time feedback.\n" +
             "This is also my first time working with a well-structured backend architecture, including a local server, advanced routing, and secure data handling. Although I can’t share access to the project (since it’s running locally and includes confidential information), it has significantly boosted my backend development skills and my ability to work in a team on complex systems.",
+        tech: ["React", "HTML5", "CSS3", "JavaScript (ES6+)", "Font Awesome", "Ant Design", "ESLint", "GitHub Pages", "Git", "Framer Motion", "Vite", "React Router", "Axios", "Autoprefixer", "PostCSS", "Nest", "TypeScript", "MongoDB", "Mongoose",
+            "Axios", "ESLint",
+]
     },
     {
         id: "timer",
@@ -53,12 +57,17 @@ const dataProjects = [
             "While the application isn’t responsive for mobile devices, it’s fully optimized for laptops and offers a smooth and intuitive experience. It allows users to track their solving times, compare results, and view performance progress. One of the core features is its integration with a scramble generation library, which automatically provides new scrambles after each attempt — making it a handy tool for anyone practicing speedcubing.\n" +
             "\n" +
             "Even though it’s not a large project, it taught me the importance of clean UI, user-friendly design, and data handling in JavaScript. This was a great first step into real-world development and gave me the confidence to keep learning and building more advanced applications.",
+        tech: ["HTML5", "CSS3", "JavaScript (ES6+)"],
     },
     {
         id: "note-keeper",
-        name: "Note Keeper",
+        name: "Luna (note keeper)",
         img: [
-
+            `${import.meta.env.BASE_URL}projects/Luna1.png`,
+            `${import.meta.env.BASE_URL}projects/Luna2.png`,
+            `${import.meta.env.BASE_URL}projects/Luna3.png`,
+            `${import.meta.env.BASE_URL}projects/Luna4.png`,
+            `${import.meta.env.BASE_URL}projects/Luna5.png`,
         ],
         text: "This is a React-based note-taking app I built to practice state management, component design, and local storage persistence. It features inline editing with a clean UI, allowing users to create, edit, and delete notes seamlessly.",
         link: "https://keeper-delta-taupe.vercel.app",
@@ -69,6 +78,8 @@ const dataProjects = [
             "This project deepened my understanding of React hooks (useState, useEffect), component composition, and event handling, while reinforcing best practices in managing immutable state updates and local storage synchronization. The resulting app combines functionality with a clean and simple design, providing a solid foundation for more advanced React projects.\n" +
             "\n" +
             "Building this note app was a meaningful step in my learning path — it taught me how to design and implement real-time editing workflows in React, how to create reusable components, and how to deliver a smooth, user-friendly experience. It’s a practical tool I can continue expanding and refining as I grow my React skills.",
+        tech: ["HTML5","CSS3","React", "React Router", "Styled Components", "Font Awesome", "Ant Design", "Tailwind", "TypeScript", "ESLint", "Autoprefixer", "PostCSS", "Vite"]
+
     }
 ]
 

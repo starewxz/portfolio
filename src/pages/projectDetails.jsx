@@ -7,6 +7,8 @@ import { faChevronLeft, faUpRightFromSquare } from "@fortawesome/free-solid-svg-
 import Switch from "../components /theme-switch.jsx";
 import MyCarousel from "../components /carousel.jsx";
 import "../skeletons.css";
+import TechIcon from "../components /tech-icon.jsx";
+import techData from "../services/techData.js";
 
 const ProjectDetails = () => {
     const navigate = useNavigate();
@@ -45,7 +47,6 @@ const ProjectDetails = () => {
                     mx-auto
                     p-8
                     rounded-3xl
-                    bg-white/10
                     backdrop-blur-3xl
                     border border-white/20
                     dark:border-gray-700/40
@@ -94,19 +95,49 @@ const ProjectDetails = () => {
                             {project.textAbout}
                         </article>
 
-                        {/* Optional: Tech stack or tags area */}
+                        {/* Tech Stack */}
                         {project.tech && (
                             <section className="mb-6">
-                                <h2 className="text-cyan-400 font-semibold mb-3 text-xl">Tech Stack</h2>
-                                <ul className="flex flex-wrap gap-3 text-sm sm:text-base">
-                                    {project.tech.map((tech) => (
-                                        <li
-                                            key={tech}
-                                            className="px-3 py-1 rounded-md bg-cyan-700/20 backdrop-blur-sm border border-cyan-400 text-cyan-200"
-                                        >
-                                            {tech}
-                                        </li>
-                                    ))}
+                                <h2 className="text-cyan-400 font-semibold mb-4 text-xl sm:text-2xl select-none cursor-default border-b border-cyan-600 pb-1">
+                                    Tech Stack used:
+                                </h2>
+                                <ul
+                                    className="
+                                        flex flex-wrap gap-4
+                                        glass-tech-stack
+                                        rounded-xl p-6
+                                        max-w-full overflow-x-auto
+                                      "
+                                    style={{ scrollbarWidth: "thin" }}
+                                >
+                                    {project.tech.map((techName) => {
+                                        const tech = techData[techName];
+                                        if (!tech) {
+                                            return (
+                                                <li
+                                                    key={techName}
+                                                    className="min-w-[100px] px-4 py-2 rounded-lg border border-cyan-400 bg-cyan-700/20 backdrop-blur-sm text-cyan-200 dark:text-cyan-300 text-sm font-medium flex items-center justify-center select-none"
+                                                    style={{ userSelect: "none" }}
+                                                >
+                                                    {techName}
+                                                </li>
+                                            );
+                                        }
+                                        return (
+                                            <li
+                                                key={techName}
+                                                className="min-w-[100px]"
+                                                style={{ listStyle: "none" }}
+                                            >
+                                                <TechIcon
+                                                    techName={techName}
+                                                    icon={tech.icon}
+                                                    url={tech.url}
+                                                    color={tech.color}
+                                                />
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </section>
                         )}

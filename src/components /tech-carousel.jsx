@@ -1,7 +1,6 @@
-import '../tech-carousel.css';// for custom keyframes
+import '../tech-carousel.css'; // for custom keyframes
 import 'devicon/devicon.min.css';
-import {useState} from "react";
-
+import { useState } from "react";
 
 const techIcons = [
     // Frontend
@@ -10,34 +9,42 @@ const techIcons = [
     "devicon-javascript-plain",
     "devicon-typescript-plain",
     "devicon-react-original",
-    "devicon-nextjs-plain",
     "devicon-tailwindcss-plain",
-    "devicon-eslint-plain",
     "devicon-bootstrap-plain",
     "devicon-antdesign-plain",
-    "devicon-canva-original",
-
-    // Tools & DevOps
+    "devicon-nextjs-plain",
+    "devicon-eslint-plain",
     "devicon-git-plain",
     "devicon-vitejs-plain",
-    "devicon-vercel-original", //black
-    "devicon-docker-plain",
-    "devicon-trello-plain-wordmark",
+    "devicon-vercel-original",
+    "devicon-github-original",
+    "devicon-figma-plain",
+    "devicon-reactrouter-plain",
+    "devicon-postcss-original",
+    "devicon-npm-original-wordmark",
 
     // Backend
-    "devicon-nodejs-plain",
+    "devicon-sqlite-plain",
     "devicon-express-original",
     "devicon-nestjs-plain",
+    "devicon-nodejs-plain",
     "devicon-postgresql-plain",
+    "devicon-mysql-plain",
     "devicon-mongodb-plain",
     "devicon-firebase-plain",
-    "devicon-mysql-plain",
-    "devicon-amazonwebservices-plain-wordmark",
-    "devicon-github-original",
+    "devicon-docker-plain",
+    "devicon-graphql-plain",
+    "devicon-axios-plain",
+    "devicon-mongoose-original",
 
     // Blockchain
     "devicon-solidity-plain",
     "devicon-ethereum-original",
+
+    // Managing
+    "devicon-trello-plain-wordmark",
+    "devicon-jira-plain",
+    "devicon-notion-plain",
 ];
 
 const TechCarousel = () => {
@@ -59,6 +66,8 @@ const TechCarousel = () => {
                             <i
                                 key={i}
                                 className={`${icon} colored text-3xl sm:text-5xl grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-125 cursor-pointer`}
+                                aria-label={icon.replace("devicon-", "").replace(/-plain|-original|-wordmark/gi, "")}
+                                role="img"
                             />
                         ))}
                     </div>
