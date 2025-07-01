@@ -35,8 +35,7 @@ const dataProjects = [
         textAbout: "This project represents my first experience working on a fully developed, large-scale web application — a CRM system for a laptop store. You can check out the business on Instagram: @kuzco.shop .\n" +
             "It’s a collaborative project I’m building with a close friend who is a highly skilled and experienced developer. Working alongside him has been an amazing opportunity to learn industry-level practices, receive mentorship, and improve much faster through real-time feedback.\n" +
             "This is also my first time working with a well-structured backend architecture, including a developed server, advanced routing, and secure data handling. Although I can’t provide access to the project due to confidentiality, it played a key role in strengthening my backend development skills and enhancing my ability to collaborate on complex, team-based systems.",
-        tech: ["React", "HTML5", "CSS3", "JavaScript (ES6+)", "Font Awesome", "Ant Design", "ESLint", "GitHub Pages", "Git", "Framer Motion", "Vite", "React Router", "Axios", "Autoprefixer", "PostCSS", "Nest", "TypeScript", "MongoDB", "Mongoose",
-            "Axios", "ESLint",
+        tech: ["React", "HTML5", "CSS3", "JavaScript (ES6+)", "Font Awesome", "Ant Design", "ESLint", "GitHub Pages", "Git", "Framer Motion", "Vite", "React Router", "Axios", "Autoprefixer", "PostCSS", "Nest", "TypeScript", "MongoDB", "Mongoose", "ESLint",
 ]
     },
     {
