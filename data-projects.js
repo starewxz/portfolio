@@ -13,7 +13,7 @@ const dataProjects = [
         ],
         text: "This is my first big solo project — as I mentioned on the About Me page, it’s a landing page for an online slippers store, designed with a focus on comfort and user experience.\n" +
             "It was also my first time using React in a real-world project and connecting it to a live database. This project was a valuable learning experience and an exciting step forward in my development journey.",
-        link: "https://starewxz.github.io/fluffy/",
+        link: "https://fluffy-beta.vercel.app",
         textAbout: "This project marked my first large-scale solo development effort — a landing page for an online slippers store, thoughtfully crafted with a clean, comfort-focused design aimed at delivering a smooth user experience.\n" +
             "It was also my first hands-on experience building a real-world application with React, integrating frontend animations using Framer Motion, and connecting to a cloud database (Firebase) to handle product data and customer orders.\n" +
             "Beyond just coding, I learned how to structure and manage a complete project — from setting up responsive layouts and reusable components to handling forms, validation, and real-time updates.\n" +
