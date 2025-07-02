@@ -81,7 +81,7 @@ const AboutPage = () => {
                     <p className="mb-4 leading-relaxed">
                         My journey started with free YouTube tutorials, and as my passion grew, I began investing in quality courses on Udemy.
                         After about a year of consistent learning, I’m proud of how far I’ve come — from building a simple {" "}
-                        <span className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/timer")}>
+                        <span className="fancy-link cursor-pointer about-span" onClick={() => navigate("/projects/projectDetails/timer")}>
                             Rubik’s Cube timer
                         </span>{" "}
                         as my first project to developing full-featured, real-world applications showcased in my portfolio.
@@ -89,7 +89,7 @@ const AboutPage = () => {
 
                     <p className="mb-4 leading-relaxed">
                         One of my biggest milestones was building a landing page for an online{" "}
-                        <span className="fancy-link cursor-pointer" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
+                        <span className="fancy-link cursor-pointer about-span" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
                           slippers store
                         </span>{" "}
                         — a project I designed and developed entirely on my own. Over time, I’ve also connected with other developers and mentors, whose support continues to help me grow and stay motivated.

@@ -20,6 +20,9 @@ body.light-theme header,
 body.light-theme button {
     color: #334155;
 }
+body.light-theme .about-span {
+    color: #334155;
+}
 
 .box-shadow-cyan {
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);

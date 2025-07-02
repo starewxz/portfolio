@@ -176,7 +176,7 @@ const StyledWrapper = styled.div`
     }
 
     .content {
-        padding: 80px 60px 0 20px;
+        padding: 80px 60px 0 5px;
         transform: translate3d(0, 0, 26px);
 
         @media (max-width: 640px) {
