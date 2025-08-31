@@ -1,4 +1,4 @@
-import '../tech-carousel.css'; // for custom keyframes
+import '../styles/tech-carousel.css';
 import 'devicon/devicon.min.css';
 import { useState } from "react";
 

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Switch from "../components /theme-switch.jsx";
 import MyCarousel from "../components /carousel.jsx";
-import "../skeletons.css";
+import "../styles/skeletons.css";
 import TechIcon from "../components /tech-icon.jsx";
 import techData from "../services/techData.js";
 

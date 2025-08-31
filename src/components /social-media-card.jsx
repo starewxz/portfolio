@@ -1,10 +1,12 @@
 import { faCode, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../styles/index.css"
+
 
 const Card = () => {
     return (
-        <StyledWrapper>
+        <StyledWrapper className={'float-fast'}>
             <div className="parent">
                 <div className="card">
                     <div className="logo">
@@ -136,7 +138,7 @@ const StyledWrapper = styled.div`
             }
 
             .bottom {
-                position: static; /* Remove absolute positioning */
+                position: static;
                 flex-direction: column;
                 gap: 15px;
                 align-items: center;

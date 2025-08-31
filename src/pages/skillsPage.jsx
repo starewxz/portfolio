@@ -128,6 +128,14 @@ const SkillsPage = () => {
                                 />
                             </div>
 
+                            {expandedCards[key] && (
+                                <div
+                                    className="mb-3 p-4 rounded-xl border border-gray-500 bg-gray-700 text-gray-200 select-text text-sm sm:text-base leading-relaxed transition-colors duration-400"
+                                >
+                                    {description}
+                                </div>
+                            )}
+
                             {lists.map(({ title, items }) => (
                                 <div key={title} className="mb-3">
                                     <p className="cyan-text font-semibold text-lg sm:text-xl mb-1 select-none">{title}</p>
@@ -157,13 +165,6 @@ const SkillsPage = () => {
                                 </div>
                             ))}
 
-                            {expandedCards[key] && (
-                                <div
-                                    className="mt-6 p-4 rounded-xl border border-gray-500 bg-gray-700 text-gray-200 select-text text-sm sm:text-base leading-relaxed transition-colors duration-400"
-                                >
-                                    {description}
-                                </div>
-                            )}
                         </section>
                     </Card>
                 ))}
