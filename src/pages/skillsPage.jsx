@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import TechIcon from "../components /tech-icon.jsx";
 import techData from "../services/techData.js";
+import WebCanvas from "../components /web-canvas.jsx";
 
 const SkillsPage = () => {
     const [expandedCards, setExpandedCards] = useState({
@@ -95,6 +96,7 @@ const SkillsPage = () => {
 
     return (
         <div className="pb-10 min-h-screen transition-colors duration-400">
+            <WebCanvas />
             <Header />
             <main className="animate-fade-in px-4 sm:px-8 md:px-16 lg:px-24 max-w-5xl mx-auto mt-16">
                 {skills.map(({ key, title, lists, description }) => (

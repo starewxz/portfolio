@@ -65,6 +65,13 @@ body.light-theme .hamburger-bar {
     background-color: #334155;
 }
 
+.cyan-text {
+    background: linear-gradient(90deg, #00ffff, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.7);
+}
+
 .cyan-text:hover {
     text-shadow: 0 0 6px rgb(0, 255, 255);
 }
@@ -389,3 +396,19 @@ body.light-theme .cv-button-wrapper .cv-btn:hover {
 .animate-rotate-slow {
     animation: rotateSlow 12s linear infinite;
 }
+
+.background-waves {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, #06b6d4, #8b5cf6, #f472b6, #10b981);
+    background-size: 400% 400%;
+    animation: waveGradient 15s ease infinite;
+}
+
+@keyframes waveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+

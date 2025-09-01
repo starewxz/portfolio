@@ -5,7 +5,7 @@ import ProjectsPage from "./pages/projectsPage.jsx";
 import SkillsPage from "./pages/skillsPage.jsx";
 import ProjectDetails from "./pages/projectDetails.jsx";
 import NotFoundPage from "./pages/notFoundPage.jsx";
-import ScrollToTop from "./components /scroll-to-top.js";
+import ScrollToTop from "./components /scroll-to-top.jsx";
 
 const Router = () => {
     return (

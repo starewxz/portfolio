@@ -4,6 +4,7 @@ import TechCarousel from "../components /tech-carousel.jsx";
 import CvButton from "../components /cv-button.jsx";
 import {useState} from "react";
 import { motion } from "framer-motion";
+import BubbleLayer from "../components /bubble-layer.jsx";
 
 const MainPage = () => {
     const [hovered, setHovered] = useState(null);
@@ -19,6 +20,11 @@ const MainPage = () => {
                 <CvButton />
 
                 <div className="main-wrapper flex flex-col-reverse lg:flex-row items-center justify-center gap-10 w-full max-w-7xl mt-[-40px] lg:mt-[-60px]">
+
+                    <div className="z-0 absolute inset-0 flex justify-center items-center pointer-events-none">
+                        <BubbleLayer target={hovered || "none"} />
+                    </div>
+
                     <motion.div
                         className="z-10 flex justify-center items-center sm:w-1/2 w-full max-w-md mx-auto mt-6 sm:mt-8 lg:mt-0"
                         onHoverStart={() => setHovered("card")}

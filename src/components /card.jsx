@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import {motion} from "framer-motion";
 
 const CardWrapper = styled.div`
   margin-top: 2rem;
@@ -43,7 +44,7 @@ const CardWrapper = styled.div`
 `;
 
 const Card = ({ children, className = "" }) => {
-    return <CardWrapper className={className}>{children}</CardWrapper>;
+    return <CardWrapper as={motion.div} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} whileHover={{ scale: 1.03, rotateX: 2, rotateY: 2 }} className={className}>{children}</CardWrapper>;
 };
 
 Card.propTypes = {
