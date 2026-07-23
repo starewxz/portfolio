@@ -76,9 +76,40 @@ const dataProjects = [
             "This project deepened my understanding of React hooks (useState, useEffect), component composition, and event handling, while reinforcing best practices in managing immutable state updates and local storage synchronization. The resulting app combines functionality with a clean and simple design, providing a solid foundation for more advanced React projects.\n" +
             "\n" +
             "Building this note app was a meaningful step in my learning path — it taught me how to design and implement real-time editing workflows in React, how to create reusable components, and how to deliver a smooth, user-friendly experience. It’s a practical tool I can continue expanding and refining as I grow my React skills.",
-        tech: ["HTML5","CSS3","React", "React Router", "Styled Components", "Font Awesome", "Ant Design", "Tailwind", "TypeScript", "ESLint", "Autoprefixer", "PostCSS", "Vite"]
+        tech: ["HTML5", "CSS3", "React", "React Router", "Styled Components", "Font Awesome", "Ant Design", "Tailwind", "TypeScript", "ESLint", "Autoprefixer", "PostCSS", "Vite"]
 
-    }
+    },
+    {
+        id: "tmn-academy",
+        name: "🎓 TMN Academy",
+        img: [
+            `${import.meta.env.BASE_URL}projects/tmn1.png`,
+            `${import.meta.env.BASE_URL}projects/tmn2.png`,
+            `${import.meta.env.BASE_URL}projects/tmn3.png`,
+        ],
+        text: "TMN Academy is a modern educational platform designed to provide visitors with a clear overview of the academy, its courses, and learning opportunities.\n" +
+            "The project focuses on responsive design, smooth user interactions, and clean architecture while delivering a fast and intuitive browsing experience.",
+
+        link: "https://www.tmn.academy",
+
+        textAbout: "TMN Academy is a fully responsive educational platform built to present courses, academy information, and learning opportunities through a modern and user-friendly interface.\n" +
+            "The project emphasizes performance, maintainability, and scalability by using reusable React components, clean project architecture, and optimized rendering.\n" +
+            "Throughout the development process, I focused on creating smooth navigation, responsive layouts, and an engaging user experience across all devices.\n" +
+            "This project strengthened my experience in building production-ready React applications, structuring large codebases, and applying modern frontend development best practices.",
+
+        tech: [
+            "React",
+            "JavaScript (ES6+)",
+            "HTML5",
+            "CSS3",
+            "Vite",
+            "React Router",
+            "Git",
+            "Responsive Design",
+            "REST APIs",
+            "GitHub Pages"
+        ],
+    },
 ]
 
 export default dataProjects

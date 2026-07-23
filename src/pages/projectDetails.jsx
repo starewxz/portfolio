@@ -69,7 +69,7 @@ const ProjectDetails = () => {
                             <div className="glass-header mb-8 animate-slide-in-left">
                                 <FontAwesomeIcon
                                     icon={faChevronLeft}
-                                    className="size-6 cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-cyan-400 hover:-translate-x-1 cyan-text"
+                                    className="size-8 cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-cyan-400 hover:-translate-x-1 cyan-text"
                                     onClick={() => navigate(-1)}
                                     aria-label="Go back"
                                 />

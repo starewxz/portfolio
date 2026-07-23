@@ -8,7 +8,7 @@ const CvButton = () => {
             aria-label="CV download"
         >
             <a
-                href="../../public/Revasevych-Stanislav-CV.pdf"
+                href="/Stas_Revasevych_CV.pdf"
                 download="Stas_Revasevych_CV.pdf"
                 className="cv-btn inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm sm:text-base font-semibold backdrop-blur-lg border border-white/20
                            shadow-md transition-all duration-300 hover:scale-[1.03] text-white bg-white/10
