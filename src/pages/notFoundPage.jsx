@@ -1,44 +1,26 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import {useNavigate} from "react-router-dom";
-import { Button } from "antd";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "../components/icons.jsx";
 
-const NotFoundPage = () => {
-    const navigate = useNavigate();
-    document.body.style.backgroundColor = "#000000";
-    return (
-        <div className="min-h-screen flex flex-col md:flex-row text-white px-6 md:px-10 py-10 gap-10 bg-gradient-to-br from-black via-gray-900 to-black">
-            <div className="flex flex-col justify-center flex-1 gap-10 relative">
-                <h1 className="text-4xl md:text-5xl font-extrabold leading-tight z-10">
-                    Вибачте, не вдалося знайти сторінку.
-                </h1>
-                <p className="text-xl md:text-2xl font-medium text-gray-300 z-10">
-                    Але ми можемо вас повернути на головну
-                    <Button
-                        className="ml-4 bg-cyan-400 hover:bg-cyan-500 text-black px-4 py-2 rounded-full transition-all"
-                        onClick={() => navigate("/")}
-                    >
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </Button>
-                </p>
-
-                <header className="text-white-shadow absolute bottom-10 opacity-10 z-0 text-[120px] md:text-[300px] font-black select-none pointer-events-none">
-                    404
-                </header>
-            </div>
-
-            <div className="flex items-center justify-center flex-1">
-                <div className="w-[300px] md:w-[500px] h-[400px] md:h-[600px] overflow-hidden rounded-3xl ring-2 ring-cyan-400/30 shadow-xl animate-fade-in-2">
-                    <img
-                        className="w-full h-full object-cover"
-                        src={`${import.meta.env.BASE_URL}img/onyak.jpeg`}
-                        alt="on yak photo"
-                    />
-                </div>
-            </div>
+const NotFoundPage = () => (
+    <section className="container-x grid min-h-[85vh] items-center gap-12 pt-28 md:grid-cols-[1.2fr_0.8fr]">
+        <div>
+            <p className="label m-0"><b>error</b> — 404 not found</p>
+            <p className="font-display m-0 mt-2 select-none text-[clamp(7rem,26vw,16rem)] font-bold leading-[0.85] outline-text" aria-hidden="true">
+                404
+            </p>
+            <h1 className="m-0 mt-4 text-3xl font-bold sm:text-5xl">Вибачте, не вдалося знайти сторінку.</h1>
+            <p className="mt-4 text-lg" style={{ color: "var(--muted)" }}>
+                Але ми можемо вас повернути на головну.
+            </p>
+            <Link to="/" className="btn btn-primary mt-7">
+                <ArrowLeft /> На головну
+            </Link>
         </div>
 
-    )
-}
+        <div className="photo-frame mx-auto aspect-[4/5] w-full max-w-sm">
+            <img src={`${import.meta.env.BASE_URL}img/onyak.webp`} alt="on yak photo" loading="lazy" decoding="async" />
+        </div>
+    </section>
+);
 
-export default NotFoundPage
+export default NotFoundPage;

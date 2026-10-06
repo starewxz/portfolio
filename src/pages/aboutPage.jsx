@@ -1,183 +1,114 @@
-import styled from 'styled-components';
-import Header from "../components /header.jsx";
-import { Button } from "antd";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import Card from "../components /card.jsx";
-import { useEffect } from "react";
-import {motion} from "framer-motion";
+import { Link } from "react-router-dom";
+import Reveal from "../components/reveal.jsx";
+import { ArrowRight, Download } from "../components/icons.jsx";
+import { cvFile } from "../services/links.js";
+import { CODING_START_LABEL, getAge, getExperienceLabel } from "../services/profile.js";
 
-const Heading = styled.h1`
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    color: #06b6d4;
-    text-align: center;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.05em;
-    position: relative;
-    padding-bottom: 0.25rem;
-
-    @media (max-width: 640px) {
-        font-size: 1.75rem;
-        width: 90%;
-        margin: 0 auto 1rem;
-    }
-    @media (min-width: 641px) and (max-width: 1024px) {
-        font-size: 2.25rem;
-        width: 80%;
-        margin: 0 auto 1rem;
-    }
-    @media (min-width: 1025px) {
-        font-size: 3rem;
-    }
-`;
-
-const SubHeading = styled.h2`
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    opacity: 0.85;
-    color: #a0cfea;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 2rem;
-
-    @media (max-width: 640px) {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        padding: 0 1rem;
-    }
-    @media (min-width: 641px) and (max-width: 1024px) {
-        font-size: 1.1rem;
-        margin-bottom: 1.75rem;
-    }
-`;
-
+const buildFacts = (age, experience) => [
+    { k: "age", v: String(age) },
+    { k: "role", v: "Middle Software Engineer" },
+    { k: "company", v: "Insiders Software, Lviv" },
+    { k: "coding since", v: `${CODING_START_LABEL} · ${experience}` },
+    { k: "focus", v: "Full-stack web & systems" },
+    { k: "languages", v: "Ukrainian (native), English B2/C1, Polish A2, Spanish A2" },
+    { k: "off-screen", v: "Boxing, football, volleyball" },
+];
 
 const AboutPage = () => {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        document.body.style.overflowX = "hidden";
-        return () => {
-            document.body.style.overflowX = "";
-        };
-    }, []);
+    // Derived from fixed dates in services/profile.js, so it is always current.
+    const now = new Date();
+    const age = getAge(now);
+    const experience = getExperienceLabel(now);
+    const facts = buildFacts(age, experience);
 
     return (
-        <div className="pb-5 min-h-screen transition-colors duration-400">
-            <Header />
-            <main className=" animate-fade-in flex flex-col justify-center items-center mt-12 px-4 sm:px-6 lg:px-8 text-gray-200 dark:text-gray-800 max-w-3xl mx-auto">
-                <motion.div
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
-                    <Heading>Hello, I’m Stas — as you’ve probably already noticed on the main page 😄</Heading>
-                </motion.div>
+    <section className="container-x pt-32 sm:pt-40">
+        <header className="mb-14 max-w-5xl">
+            <p className="label m-0"><b>~/about</b> — readme.md</p>
+            <h1 className="m-0 mt-3 text-[clamp(2.6rem,8vw,6.5rem)] font-bold leading-[0.95]">
+                I&apos;m Stas — a full-stack engineer who <span className="hl">learns by shipping</span>.
+            </h1>
+        </header>
 
-                <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                >
-                    <SubHeading>💠 Here is a little bit about me 💠</SubHeading>
-                </motion.div>
+        <div className="grid items-start gap-12 lg:grid-cols-[1.5fr_0.5fr]">
+            <div className="prose-about max-w-3xl text-lg" style={{ color: "var(--muted)" }}>
+                <Reveal as="p" className="!text-2xl !leading-relaxed sm:!text-[1.65rem]" style={{ color: "var(--ink)" }}>
+                    I&apos;m a {age}-year-old Middle Software Engineer at Insiders Software in Lviv, where I design, build,
+                    test and deploy software end to end. I started programming in {CODING_START_LABEL} after leaving behind
+                    a football career, and have {experience} of hands-on experience built through consistent practice and
+                    real projects.
+                </Reveal>
 
-                <Card className="mb-8 rounded-xl border border-gray-600 bg-gray-800 dark:bg-gray-100 transition-colors duration-400 p-6">
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        I’m a 16-year-old passionate full-stack web developer from Ukraine. I began programming in the spring of 2024, after deciding to leave behind my football career.
-                        Fun fact — before I got into coding, I had almost no experience with computers.
-                        I wasn’t into gaming, and when I did play, it wasn’t even on a PC. So diving into programming truly felt like stepping into an entirely new world.
-                    </motion.p>
+                <Reveal as="p">
+                    My foundation is full-stack web development with React, Next.js, TypeScript, Node.js and NestJS.
+                    From my first project — a vanilla-JavaScript{" "}
+                    <Link className="link-u" to="/projects/projectDetails/timer">Rubik&apos;s Cube timer</Link>{" "}
+                    — I moved quickly to real products: an e-commerce{" "}
+                    <Link className="link-u" to="/projects/projectDetails/fluffy-steps">storefront</Link>{" "}
+                    that I designed and built on my own, and a{" "}
+                    <Link className="link-u" to="/projects/projectDetails/kuzco-crm">CRM system</Link>{" "}
+                    for a retail business, developed from November 2024 to May 2026 in a team with a senior engineer.
+                    Alongside this I delivered further client work, including an{" "}
+                    <Link className="link-u" to="/projects/projectDetails/tenderness">online store</Link>, a{" "}
+                    <Link className="link-u" to="/projects/projectDetails/sauna-polska">booking-focused website</Link>{" "}
+                    and an{" "}
+                    <Link className="link-u" to="/projects/projectDetails/tmn-academy">education platform</Link>.
+                </Reveal>
 
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        My journey started with free YouTube tutorials, and as my passion grew, I began investing in quality courses on Udemy.
-                        After about a year of consistent learning, I’m proud of how far I’ve come — from building a simple {" "}
-                        <span className="fancy-link cursor-pointer about-span" onClick={() => navigate("/projects/projectDetails/timer")}>
-                            Rubik’s Cube timer
-                        </span>{" "}
-                        as my first project to developing full-featured, real-world applications showcased in my portfolio.
-                    </motion.p>
+                <Reveal as="p">
+                    Professionally, my work spans the whole lifecycle of a system: designing architecture and making
+                    key technical decisions, end-to-end development and testing, containerisation and deployment, and
+                    building internal tools for the company. I also take part in conversations with large clients and
+                    contribute to large-scale projects, which keeps me close to the business goals behind the code.
+                </Reveal>
 
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        One of my biggest milestones was building a landing page for an online{" "}
-                        <span className="fancy-link cursor-pointer about-span" onClick={() => navigate("/projects/projectDetails/fluffy-steps")}>
-                          slippers store
-                        </span>{" "}
-                        — a project I designed and developed entirely on my own. Over time, I’ve also connected with other developers and mentors, whose support continues to help me grow and stay motivated.
-                    </motion.p>
+                <Reveal as="p">
+                    Adaptability is one of my strongest skills. I learn new technologies by working with them in
+                    production — most recently the Atlassian Forge framework and PHP Laravel — and I keep my skills
+                    current through continuous study and side projects such as a real-time collaborative editor, a
+                    multi-vendor marketplace and a self-hosted learning platform.
+                </Reveal>
 
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        But this path hasn’t always been easy. Like many self-taught learners, I’ve gone through periods of self-doubt, burnout, and mental blocks.
-                        Some topics — especially parts of JavaScript or backend logic — were incredibly challenging at first. There were moments I felt stuck, even afraid to start something new or take on more serious, commercial projects. {" "}
-                        <span className={'font-inter italic'}>But I moved on on this fear and started creating.</span> {" "}I’ve learned that growth often comes through those uncomfortable steps forward — <span className={'font-inter italic'}>you have to go through it in order to develop.</span>
-                        {" "}I’ve made it a rule to stay consistent, even if it’s just 5 minutes of learning on a tough day — progress, no matter how small, still counts.
-                    </motion.p>
+                <Reveal as="p">
+                    Being self-taught has shaped how I work.{" "}
+                    <span className="hl font-semibold" style={{ color: "var(--ink)" }}>Consistency beats intensity</span>:
+                    I make steady progress every day, work through hard problems instead of avoiding them,
+                    and treat every project as a chance to raise my own standard.
+                </Reveal>
 
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        Beyond coding, I’m passionate about sports and staying active. I train in boxing and enjoy spending time outdoors, whether it&apos;s playing volleyball, football, or just being with friends.
-                        Staying physically active helps me stay mentally balanced and recharged for every new challenge.
-                    </motion.p>
+                <Reveal as="p">
+                    Outside of engineering I train in boxing and enjoy football and volleyball — habits that keep me
+                    focused, resilient and ready for the next challenge.
+                </Reveal>
 
+                <Reveal as="p">
+                    If you would like to see how I work, explore the projects or get in touch — I&apos;m always glad to
+                    discuss interesting products and teams.
+                </Reveal>
 
-                    <motion.p
-                        className="mb-4 leading-relaxed"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                        Thanks for taking the time to learn a bit about me.
-                        I invite you to explore my projects — each one represents a part of my journey as a developer.
-                    </motion.p>
+                <Reveal className="mt-10 flex flex-wrap gap-4">
+                    <Link to="/projects" className="btn btn-primary">
+                        View projects <ArrowRight />
+                    </Link>
+                    <a className="btn" href={cvFile} download="Stas_Revasevych_CV.pdf">
+                        <Download /> CV
+                    </a>
+                </Reveal>
+            </div>
 
-                    <p className="mb-4 leading-relaxed">Feel free to explore my projects on the next page!</p>
-
-                    <Button
-                        type="primary"
-                        size="large"
-                        className="mt-8 px-6 py-3 rounded-full bg-cyan-400 hover:bg-[#001EFF] text-white font-semibold flex items-center justify-center gap-2 transition-shadow shadow-cyan-400/70 hover:shadow-cyan-500/90"
-                        onClick={() => navigate("/projects")}
-                        aria-label="Go to projects"
-                    >
-                        Go to projects <FontAwesomeIcon icon={faArrowRight} />
-                    </Button>
-                </Card>
-            </main>
+            <Reveal delay={120} as="aside" className="card p-6 lg:sticky lg:top-28" aria-label="Quick facts">
+                <h2 className="label m-0 mb-5 !text-[0.8rem]"><b>#</b> quick facts</h2>
+                <dl className="m-0 grid gap-5">
+                    {facts.map(({ k, v }) => (
+                        <div key={k} className="border-t-2 pt-3" style={{ borderColor: "var(--line)" }}>
+                            <dt className="label">{k}</dt>
+                            <dd className="m-0 mt-1 text-lg font-semibold">{v}</dd>
+                        </div>
+                    ))}
+                </dl>
+            </Reveal>
         </div>
+    </section>
     );
 };
 
