@@ -6,6 +6,7 @@ import { CODING_START_LABEL, getAge, getExperienceLabel } from "../services/prof
 
 const buildFacts = (age, experience) => [
     { k: "age", v: String(age) },
+    { k: "location", v: "Ukraine, Lviv" },
     { k: "role", v: "Middle Software Engineer" },
     { k: "company", v: "Insiders Software, Lviv" },
     { k: "coding since", v: `${CODING_START_LABEL} · ${experience}` },

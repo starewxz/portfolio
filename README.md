@@ -1,6 +1,6 @@
 # Portfolio — Stanislav Revasevych
 
-Personal portfolio of a full-stack developer from Ukraine: projects, skills and a bit about me.
+Personal portfolio of a full-stack developer based in Lviv, Ukraine: projects, skills and a bit about me.
 Built to be small, fast and accessible.
 
 **Live:** https://portfolio-alpha-snowy-55.vercel.app · **GitHub:** [@starewxz](https://github.com/starewxz)
