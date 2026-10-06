@@ -41,7 +41,7 @@ const MainPage = () => (
 
                 <Reveal delay={140}>
                     <p className="mt-8 max-w-xl text-xl leading-relaxed sm:text-2xl" style={{ color: "var(--muted)" }}>
-                        Full-stack developer from Ukraine. I build <span className="hl font-semibold" style={{ color: "var(--ink)" }}>fast, modern web apps</span> —
+                        Full-stack developer based in Lviv, Ukraine. I build <span className="hl font-semibold" style={{ color: "var(--ink)" }}>fast, modern web apps</span> —
                         polished frontends, solid backends, no fluff.
                     </p>
                 </Reveal>
@@ -92,7 +92,7 @@ const MainPage = () => (
   `}<span className="t-key">&quot;name&quot;</span>{`: `}<span className="t-str">&quot;Stanislav Revasevych&quot;</span>{`,
   `}<span className="t-key">&quot;role&quot;</span>{`: `}<span className="t-str">&quot;middle software engineer&quot;</span>{`,
   `}<span className="t-key">&quot;age&quot;</span>{`: `}<span className="t-str">{getAge()}</span>{`,
-  `}<span className="t-key">&quot;location&quot;</span>{`: `}<span className="t-str">&quot;Ukraine&quot;</span>{`,
+  `}<span className="t-key">&quot;location&quot;</span>{`: `}<span className="t-str">&quot;Ukraine, Lviv&quot;</span>{`,
   `}<span className="t-key">&quot;coding_since&quot;</span>{`: `}<span className="t-str">&quot;{CODING_START_LABEL.toLowerCase()}&quot;</span>{`,
   `}<span className="t-key">&quot;experience&quot;</span>{`: `}<span className="t-str">&quot;{getExperienceLabel()}&quot;</span>{`,
   `}<span className="t-key">&quot;stack&quot;</span>{`: [`}<span className="t-str">&quot;React&quot;</span>{`, `}<span className="t-str">&quot;TypeScript&quot;</span>{`, `}<span className="t-str">&quot;Node&quot;</span>{`],
