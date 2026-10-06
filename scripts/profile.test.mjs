@@ -1,0 +1,17 @@
+import { getAge, getExperienceMonths, getExperienceLabel } from '../src/services/profile.js'
+const d = (y, m, day) => new Date(y, m - 1, day)
+const eq = (name, got, want) => { const ok = got === want; console.log(ok ? 'PASS' : 'FAIL', name, '->', got, ok ? '' : `(want ${want})`); if (!ok) process.exitCode = 1 }
+eq('age day before 17th birthday', getAge(d(2026, 7, 3)), 16)
+eq('age on 17th birthday', getAge(d(2026, 7, 4)), 17)
+eq('age today (2026-10-06)', getAge(d(2026, 10, 6)), 17)
+eq('age on 18th birthday', getAge(d(2027, 7, 4)), 18)
+eq('age leap-day safety (2028-02-29)', getAge(d(2028, 2, 29)), 18)
+eq('exp Oct 2023 start month', getExperienceMonths(d(2023, 10, 15)), 0)
+eq('exp label 0', getExperienceLabel(d(2023, 10, 15)), '0 months')
+eq('exp label 1 month', getExperienceLabel(d(2023, 11, 1)), '1 month')
+eq('exp label 8 months', getExperienceLabel(d(2024, 6, 1)), '8 months')
+eq('exp label exactly 1 year', getExperienceLabel(d(2024, 10, 1)), '1 year')
+eq('exp label 1+ years', getExperienceLabel(d(2025, 3, 1)), '1+ years')
+eq('exp label 3 years today', getExperienceLabel(d(2026, 10, 6)), '3 years')
+eq('exp precise', getExperienceLabel(d(2026, 9, 6), { precise: true }), '2 years, 11 months')
+eq('exp before start never negative', getExperienceMonths(d(2023, 1, 1)), 0)

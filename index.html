@@ -1,39 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Runs before first paint so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" href="/code.png" />
-    <link rel="apple-touch-icon" href="/code.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <meta name="keywords" content="portfolio revasevych">
-    <meta name="description" content="This is portfolio website for Revasevych Stanislav, young and passionate full-stack web developer">
-    <meta name="author" content="Developed by Stanislav Revasevych">
-    <title> Revasevych Stanislav </title>
+    <link rel="apple-touch-icon" href="/code.png" />
+    <meta name="theme-color" content="#0b1120" />
+    <meta name="description" content="Portfolio of Stanislav Revasevych — full-stack web developer from Ukraine building fast, modern React and Node applications." />
+    <meta name="keywords" content="portfolio, Revasevych, full-stack developer, React, TypeScript, Node" />
+    <meta name="author" content="Stanislav Revasevych" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stanislav Revasevych — Full-stack Developer" />
+    <meta property="og:description" content="Fast, modern web apps with React, TypeScript and Node. See projects, skills and get in touch." />
+    <meta property="og:image" content="/img/me.webp" />
+    <meta name="twitter:card" content="summary" />
+    <title>Stanislav Revasevych — Full-stack Developer</title>
+    <style>
+      /* Critical paint: correct background + no layout shift before the CSS bundle lands. */
+      html{background:#0b1120}html:not(.dark){background:#eaf6ff}
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      (function() {
-        try {
-          const theme = localStorage.getItem('theme');
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.style.backgroundColor = '#0f172a';
-          } else if (theme === 'light') {
-            document.documentElement.classList.remove('dark');
-            document.body.classList.add('light-theme');
-            document.body.style.backgroundColor = '#bae6fd';
-          }
-        } catch(e) {
-          // in case localStorage is blocked or unavailable
-          console.error(e);
-        }
-      })();
-    </script>
   </body>
 </html>
